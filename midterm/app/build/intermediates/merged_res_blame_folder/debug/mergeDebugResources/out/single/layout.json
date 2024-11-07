@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-mergeDebugResources-4:\\layout\\activity_main2.xml",
+        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-main-7:\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "com.example.studentinformationmanagement.app-mergeDebugResources-4:/layout/activity_main2.xml",
+        "source": "com.example.studentinformationmanagement.app-main-7:/layout/activity_main2.xml"
+    },
+    {
+        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-mergeDebugResources-4:\\layout\\fragment_notifications.xml",
+        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-main-7:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-mergeDebugResources-4:\\layout\\fragment_dashboard.xml",
+        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-main-7:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-mergeDebugResources-4:\\layout\\fragment_home.xml",
+        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-main-7:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-mergeDebugResources-4:\\layout\\activity_login.xml",
+        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-main-7:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-mergeDebugResources-4:\\layout\\activity_main.xml",
+        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.studentinformationmanagement.app-main-7:\\layout\\activity_main.xml"
+    }
+]

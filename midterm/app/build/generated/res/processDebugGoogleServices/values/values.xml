@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">569092377004</string>
+    <string name="google_api_key" translatable="false">AIzaSyC7UPH8MiyLOMkAdFBWEADEfiraGB3dmIY</string>
+    <string name="google_app_id" translatable="false">1:569092377004:android:e1e75cb3a0b5bb04951209</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC7UPH8MiyLOMkAdFBWEADEfiraGB3dmIY</string>
+    <string name="google_storage_bucket" translatable="false">midtermar.firebasestorage.app</string>
+    <string name="project_id" translatable="false">midtermar</string>
+</resources>
