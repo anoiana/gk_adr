@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="selected_item_bg">#6200EE</color> <!-- Màu nền khi item được chọn -->
+    <color name="selected_item_text_color">#FFFFFF</color> <!-- Màu văn bản khi item được chọn -->
+</resources>

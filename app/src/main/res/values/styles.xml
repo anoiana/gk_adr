@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavActiveStyle">
+        <item name="android:background">@color/selected_item_bg</item>
+        <item name="android:textColor">@color/selected_item_text_color</item>
+    </style>
+</resources>
