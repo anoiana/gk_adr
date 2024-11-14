@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Các TextView cho các thông tin cơ bản của certificate -->
+    <TextView
+        android:id="@+id/tvCertificateId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Certificate ID"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvCertificateName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Certificate Name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvIssueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issue Date"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvIssuer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issuer"
+        android:textSize="18sp" />
+
+    <!-- TextView để hiển thị danh sách studentIds -->
+    <TextView
+        android:id="@+id/tvStudentIds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Students"
+        android:textSize="18sp" />
+
+    <!-- Button Trở về -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trở về"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

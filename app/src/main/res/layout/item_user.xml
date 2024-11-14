@@ -18,11 +18,44 @@
         android:layout_marginBottom="4dp" />
 
     <TextView
-        android:id="@+id/tvUserEmail"
+        android:id="@+id/tvUserRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="user@example.com"
+        android:text="admin"
         android:textSize="16sp"
         android:textColor="#555555" />
+
+    <!-- TextView mới để hiển thị userId -->
+    <TextView
+        android:id="@+id/tvUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User ID "
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Layout chứa các nút xóa và sửa -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/btn_edit_user"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_edit_24"
+            android:contentDescription="Edit"
+            android:layout_marginEnd="16dp" />
+
+        <ImageView
+            android:id="@+id/btn_delete_user"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_delete_24"
+            android:contentDescription="Delete" />
+    </LinearLayout>
 
 </LinearLayout>

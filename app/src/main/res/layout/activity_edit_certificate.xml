@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    tools:context=".activity.EditCertificateActivity">
+
+    <!-- Tên Chứng chỉ -->
+    <EditText
+        android:id="@+id/editTextCertificateName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Certificate Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="text" />
+
+    <!-- Ngày cấp chứng chỉ -->
+    <EditText
+        android:id="@+id/editTextIssueDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Issue Date (dd/mm/yyyy)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextCertificateName"
+        android:inputType="date" />
+
+    <!-- Cơ quan cấp chứng chỉ -->
+    <EditText
+        android:id="@+id/editTextIssuer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Issuer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextIssueDate"
+        android:inputType="text" />
+
+    <!-- Nút cập nhật chứng chỉ -->
+    <Button
+        android:id="@+id/buttonUpdateCertificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Certificate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextIssuer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

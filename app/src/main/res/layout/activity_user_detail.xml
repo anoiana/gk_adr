@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_user_detail.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tên người dùng -->
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Tuổi -->
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Age: "
+        android:textSize="16sp" />
+
+    <!-- Số điện thoại -->
+    <TextView
+        android:id="@+id/textViewPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone Number: "
+        android:textSize="16sp" />
+
+    <!-- Trạng thái -->
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status: "
+        android:textSize="16sp" />
+
+    <!-- Vai trò -->
+    <TextView
+        android:id="@+id/textViewRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Role: "
+        android:textSize="16sp" />
+
+    <!-- Ảnh đại diện -->
+    <ImageView
+        android:id="@+id/imageViewProfilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_placeholder" />
+</LinearLayout>
