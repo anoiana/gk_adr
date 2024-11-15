@@ -1,0 +1,5 @@
+com.example.ad_gk.test.app-androidTest-0 D:\ITWORKZONE\gk_adr\app\build\generated\res\resValues\androidTest\debug
+com.example.ad_gk.test.app-mergeDebugAndroidTestResources-1 D:\ITWORKZONE\gk_adr\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.ad_gk.test.app-mergeDebugAndroidTestResources-2 D:\ITWORKZONE\gk_adr\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.ad_gk.test.app-debugAndroidTest-3 D:\ITWORKZONE\gk_adr\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.example.ad_gk.test.app-core-1.6.1-4 D:\setupapp\Android\caches\transforms-4\3cb76951e02131afcdaf206c22da2ab8\transformed\core-1.6.1\res

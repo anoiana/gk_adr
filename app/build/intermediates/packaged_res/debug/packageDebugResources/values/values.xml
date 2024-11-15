@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="role_options">
+        <item>Admin</item>
+        <item>Manager</item>
+        <item>Employee</item>
+    </string-array>
+    <string-array name="status_options">
+        <item>Normal</item>
+        <item>Locked</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="blue">#51A7DF</color>
+    <color name="bluenhealthcare">#DAF4FF</color>
+    <color name="darkblue">#102C57</color>
+    <color name="organe_color">#EE4E4E</color>
+    <color name="selected_item_bg">#6200EE</color>
+    <color name="selected_item_text_color">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">ad_gk</string>
+    <string name="gcm_defaultSenderId" translatable="false">440553102789</string>
+    <string name="google_api_key" translatable="false">AIzaSyCJ7MRqmY9DDXTNEfI2dyBZ0r5nYNjBljg</string>
+    <string name="google_app_id" translatable="false">1:440553102789:android:c49f60b2a0e1a379683fac</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCJ7MRqmY9DDXTNEfI2dyBZ0r5nYNjBljg</string>
+    <string name="google_storage_bucket" translatable="false">androidgk-b3ff8.firebasestorage.app</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="project_id" translatable="false">androidgk-b3ff8</string>
+    <style name="Base.Theme.Ad_gk" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="BottomNavActiveStyle">
+        <item name="android:background">@color/selected_item_bg</item>
+        <item name="android:textColor">@color/selected_item_text_color</item>
+    </style>
+    <style name="Theme.Ad_gk" parent="Base.Theme.Ad_gk"/>
+</resources>

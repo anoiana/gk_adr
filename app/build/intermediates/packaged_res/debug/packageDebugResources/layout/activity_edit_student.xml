@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/blue"
+    tools:context=".activity.EditStudentActivity">
+    <LinearLayout
+        android:backgroundTint="@color/bluenhealthcare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sửa sinh viên"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="@color/organe_color"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bluenhealthcare"
+            android:padding="16dp">
+        <!-- Tên sinh viên -->
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_marginBottom="2sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingStart="10sp"
+            android:hint="Name"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:inputType="textPersonName" />
+        <!-- Tuổi sinh viên -->
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_marginBottom="2sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingStart="10sp"
+            android:hint="Age"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/editTextName"
+            android:inputType="number" />
+        <!-- Số điện thoại sinh viên -->
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_marginBottom="2sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingStart="10sp"
+            android:hint="Phone Number"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/editTextAge"
+            android:inputType="phone" />
+
+        <!-- Giới tính sinh viên -->
+        <Spinner
+            android:layout_marginBottom="2sp"
+            android:id="@+id/spinnerGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber" />
+
+        <!-- Email sinh viên -->
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_marginBottom="2sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingStart="10sp"
+            android:hint="Email"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/spinnerGender"
+            android:inputType="textEmailAddress" />
+
+        <!-- Địa chỉ sinh viên -->
+        <EditText
+
+            android:id="@+id/editTextAddress"
+            android:layout_marginBottom="2sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingStart="10sp"
+            android:hint="Address"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
+
+        <!-- Danh sách chứng chỉ dưới dạng CheckBox -->
+        <LinearLayout
+            android:id="@+id/checkboxContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/editTextAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="16dp" />
+        <!-- Nút lưu sinh viên -->
+        <Button
+            android:id="@+id/buttonSaveStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/blue"
+            android:text="Lưu"/>
+            </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

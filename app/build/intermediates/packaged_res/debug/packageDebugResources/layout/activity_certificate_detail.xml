@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/blue"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="start|top"
+    android:padding="10sp"
+    android:scrollbars="vertical">
+    <LinearLayout
+        android:layout_marginTop="20sp"
+        android:padding="10sp"
+        android:background="@color/bluenhealthcare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start|top">
+
+        <TextView
+            android:background="@color/organe_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thông tin chi tiết tín chỉ"
+            android:textColor="@color/bluenhealthcare"
+            android:gravity="center"
+            android:padding="10sp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10sp"
+            android:orientation="vertical">
+    <!-- Các TextView cho các thông tin cơ bản của certificate -->
+    <TextView
+        android:id="@+id/tvCertificateId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Certificate ID"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tvCertificateName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Certificate Name"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tvIssueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issue Date"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tvIssuer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issuer"
+        android:textSize="18sp" />
+    <!-- TextView để hiển thị danh sách studentIds -->
+    <TextView
+        android:id="@+id/tvStudentIds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Students"
+        android:textSize="18sp" />
+    <!-- Button Trở về -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:layout_gravity="center"
+        android:text="Trở về" />
+            </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
