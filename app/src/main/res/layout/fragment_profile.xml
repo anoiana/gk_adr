@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Ảnh đại diện -->
         <ImageView
             android:id="@+id/profile_image"
             android:layout_width="120dp"
@@ -26,15 +25,15 @@
             android:id="@+id/btn_change_profile_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thay Đổi Ảnh Đại Diện"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"
+            android:onClick="onChangeProfilePicture"
             android:padding="10dp"
-            android:onClick="onChangeProfilePicture" />
+            android:text="Thay Đổi Ảnh Đại Diện"
+            android:textColor="@android:color/white" />
 
-        <!-- Tiêu đề và EditText cho các thông tin cá nhân -->
         <TextView
-            android:id="@+id/tv_name_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên Sinh Viên:"
@@ -44,20 +43,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_name"
+        <TextView
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nguyễn Văn A"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_dob_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ngày Sinh:"
@@ -67,20 +65,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_dob"
+        <TextView
+            android:id="@+id/tv_dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="01/01/2000"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_gender_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Giới Tính:"
@@ -90,20 +87,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_gender"
+        <TextView
+            android:id="@+id/tv_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nam"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_address_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Địa Chỉ:"
@@ -113,20 +109,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_address"
+        <TextView
+            android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="123 Đường ABC, TP. HCM"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_phone_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Số Điện Thoại:"
@@ -136,20 +131,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_phone"
+        <TextView
+            android:id="@+id/tv_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0123456789"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_email_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email:"
@@ -159,20 +153,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_email"
+        <TextView
+            android:id="@+id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="nguyenvana@gmail.com"
+            android:text="nguyenvana@example.com"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_student_id_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mã Sinh Viên:"
@@ -182,20 +175,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_student_id"
+        <TextView
+            android:id="@+id/tv_student_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="123456789"
+            android:text="SV0012345"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_major_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chuyên Ngành:"
@@ -205,20 +197,19 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_major"
+        <TextView
+            android:id="@+id/tv_major"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Công Nghệ Thông Tin"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tv_class_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lớp Học:"
@@ -228,16 +219,16 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/et_class"
+        <TextView
+            android:id="@+id/tv_class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CNTT-K15"
+            android:text="CNTT2024A"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:background="@drawable/border_style"
-            android:layout_marginBottom="20dp"/>
+            android:background="@drawable/textview_background"
+            android:textColor="@color/textColorPrimary"
+            android:layout_marginBottom="8dp"/>
     </LinearLayout>
 </ScrollView>
