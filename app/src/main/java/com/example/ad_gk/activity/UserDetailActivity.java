@@ -1,6 +1,7 @@
 package com.example.ad_gk.activity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,7 @@ public class UserDetailActivity extends AppCompatActivity {
     private TextView textViewName, textViewAge, textViewPhoneNumber, textViewStatus, textViewRole;
     private ImageView imageViewProfilePicture;
     private String userId;
-
+    Button btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,10 @@ public class UserDetailActivity extends AppCompatActivity {
         textViewStatus = findViewById(R.id.textViewStatus);
         textViewRole = findViewById(R.id.textViewRole);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> {
+            onBackPressed();
+        });
 
         // Lấy dữ liệu người dùng từ Firestore hoặc cơ sở dữ liệu và hiển thị
         loadUserData(userId);

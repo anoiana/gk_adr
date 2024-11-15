@@ -27,8 +27,8 @@ public class EditUserActivity extends AppCompatActivity {
 
     private EditText editTextName, editTextAge, editTextPhoneNumber;
     private Spinner spinnerStatus, spinnerRole;
-    private ImageView imageViewProfilePicture;
-    private Button buttonSave, buttonChangeProfilePicture;
+    private ImageView imageViewProfilePicture, buttonChangeProfilePicture;
+    private Button buttonSave;
     private String userId;
     private Uri selectedImageUri;
 
@@ -46,7 +46,6 @@ public class EditUserActivity extends AppCompatActivity {
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
         buttonSave = findViewById(R.id.buttonSave);
         buttonChangeProfilePicture = findViewById(R.id.buttonSelectProfilePicture);
-
         // Lấy userId từ Intent
         userId = getIntent().getStringExtra("userId");
 

@@ -3,14 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/rounded_background"
+    android:padding="16dp"
+    android:elevation="4dp"
+    android:layout_margin="8dp">
 
     <TextView
         android:id="@+id/tvCertificateName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Certificate Name"
-        android:textSize="16sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <TextView
@@ -18,30 +21,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Certificate Id"
-        android:textSize="14sp" />
+        android:textSize="18sp" />
 
     <!-- Layout chứa các nút xóa và sửa -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="end"
+        android:layout_gravity="end"
         android:layout_marginTop="8dp">
-
         <ImageView
             android:id="@+id/btn_edit_certificate"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/baseline_edit_24"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/pen"
             android:contentDescription="Edit"
             android:layout_marginEnd="16dp" />
-
         <ImageView
             android:id="@+id/btn_delete_certificate"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/baseline_delete_24"
-            android:contentDescription="Delete" />
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/thungrat"
+            android:contentDescription="Delete"/>
 
     </LinearLayout>
 

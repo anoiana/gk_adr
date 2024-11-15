@@ -31,7 +31,6 @@ public class AddUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
-
         editTextName = findViewById(R.id.editTextName);
         editTextAge = findViewById(R.id.editTextAge);
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
@@ -51,7 +50,7 @@ public class AddUserActivity extends AppCompatActivity {
         spinnerRole.setAdapter(roleAdapter);
 
         // Nút chọn ảnh
-        Button buttonSelectProfilePicture = findViewById(R.id.buttonSelectProfilePicture);
+        ImageView buttonSelectProfilePicture = findViewById(R.id.buttonSelectProfilePicture);
         buttonSelectProfilePicture.setOnClickListener(v -> openGallery());
 
         // Nút lưu người dùng

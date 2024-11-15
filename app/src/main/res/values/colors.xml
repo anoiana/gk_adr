@@ -3,5 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="selected_item_bg">#6200EE</color> <!-- Màu nền khi item được chọn -->
-    <color name="selected_item_text_color">#FFFFFF</color> <!-- Màu văn bản khi item được chọn -->
+    <color name="darkblue">#071952</color>
+    <color name="blue">#088395</color>
+    <color name="light">#37B7C3</color>
+    <color name="bluewith">#EBF4F6</color>
+    EBF4F6
+    <color name="selected_item_text_color">#FFFFFF</color>
+    <!-- Màu văn bản khi item được chọn -->
 </resources>
