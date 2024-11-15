@@ -3,18 +3,17 @@ package com.example.ad_gk.model;
 public class LoginHistory {
     private String userId;       // ID người dùng
     private String loginTime;    // Thời gian đăng nhập
-    private String logoutTime;   // Thời gian đăng xuất
-    private String deviceInfo;   // Thông tin thiết bị (nếu cần)
+    private String loginId;   // Thời gian đăng xuất
 
     // Constructor mặc định cần thiết cho Firestore
     public LoginHistory() {}
 
     // Constructor có tham số
-    public LoginHistory(String userId, String loginTime, String logoutTime, String deviceInfo) {
-        this.userId = userId;
+    public LoginHistory(String loginId, String loginTime, String userId) {
+        this.loginId = loginId;
         this.loginTime = loginTime;
-        this.logoutTime = logoutTime;
-        this.deviceInfo = deviceInfo;
+        this.userId = userId;
+
     }
 
     // Getter và Setter cho các trường
@@ -24,9 +23,6 @@ public class LoginHistory {
     public String getLoginTime() { return loginTime; }
     public void setLoginTime(String loginTime) { this.loginTime = loginTime; }
 
-    public String getLogoutTime() { return logoutTime; }
-    public void setLogoutTime(String logoutTime) { this.logoutTime = logoutTime; }
-
-    public String getDeviceInfo() { return deviceInfo; }
-    public void setDeviceInfo(String deviceInfo) { this.deviceInfo = deviceInfo; }
+    public String getloginId() { return loginId; }
+    public void setloginId(String logoutTime) { this.loginId = logoutTime; }
 }

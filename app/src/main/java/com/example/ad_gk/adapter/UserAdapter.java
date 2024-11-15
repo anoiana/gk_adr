@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.ad_gk.R;
 import com.example.ad_gk.activity.EditUserActivity;
 import com.example.ad_gk.activity.UserDetailActivity; // Thêm activity chi tiết người dùng
@@ -21,10 +23,12 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 
     private List<User> userList;
+    private String userRole;  // Biến lưu trữ role của người dùng
 
     // Constructor nhận vào danh sách người dùng
-    public UserAdapter(List<User> userList) {
+    public UserAdapter(List<User> userList, String userRole) {
         this.userList = userList;
+        this.userRole = userRole;
     }
 
     @NonNull
@@ -39,24 +43,38 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         User user = userList.get(position);
         holder.bind(user);
 
-        // Xử lý sự kiện xóa
-        holder.btnDeleteUser.setOnClickListener(v -> {
-            deleteUserFromFirestore(user.getUserId(), holder.itemView);
-        });
+        // Kiểm tra vai trò người dùng
+        if ("Employee".equals(userRole) || "Manager".equals(userRole)) {
+            // Nếu vai trò là Employee, ẩn các nút và sự kiện
+            holder.btnDeleteUser.setVisibility(View.GONE);
+            holder.btnEditUser.setVisibility(View.GONE);
+            holder.tvUserId.setVisibility(View.GONE);
+            holder.itemView.setEnabled(false);
+            // Không thể nhấn vào item
+        } else {
+            // Nếu không phải Employee, hiển thị các nút và sự kiện
+            holder.btnDeleteUser.setVisibility(View.VISIBLE);
+            holder.btnEditUser.setVisibility(View.VISIBLE);
 
-        // Sửa người dùng
-        holder.btnEditUser.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), EditUserActivity.class);
-            intent.putExtra("userId", user.getUserId());
-            holder.itemView.getContext().startActivity(intent);
-        });
+            // Xử lý sự kiện xóa
+            holder.btnDeleteUser.setOnClickListener(v -> {
+                deleteUserFromFirestore(user.getUserId(), holder.itemView);
+            });
 
-        // Xem chi tiết người dùng
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), UserDetailActivity.class);
-            intent.putExtra("userId", user.getUserId());
-            holder.itemView.getContext().startActivity(intent);
-        });
+            // Sửa người dùng
+            holder.btnEditUser.setOnClickListener(v -> {
+                Intent intent = new Intent(holder.itemView.getContext(), EditUserActivity.class);
+                intent.putExtra("userId", user.getUserId());
+                holder.itemView.getContext().startActivity(intent);
+            });
+
+            // Xem chi tiết người dùng
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(holder.itemView.getContext(), UserDetailActivity.class);
+                intent.putExtra("userId", user.getUserId());
+                holder.itemView.getContext().startActivity(intent);
+            });
+        }
     }
 
     @Override

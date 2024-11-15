@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.ad_gk"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.firebase:firebase-storage")
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.android.gms:play-services-base:18.1.0")

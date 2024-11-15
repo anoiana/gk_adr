@@ -23,9 +23,11 @@ import java.util.List;
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
     private List<Student> studentList;
     private FirebaseFirestore db;
+    private String userRole;  // Biến lưu trữ role
 
-    public StudentAdapter(List<Student> studentList) {
+    public StudentAdapter(List<Student> studentList, String userRole) {
         this.studentList = studentList;
+        this.userRole = userRole;  // Nhận role khi khởi tạo adapter
         db = FirebaseFirestore.getInstance();
     }
 
@@ -41,24 +43,34 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         Student student = studentList.get(position);
         holder.bind(student);
 
-        // Thiết lập sự kiện xóa cho nút xóa
-        holder.btnDelete.setOnClickListener(v -> {
-            deleteStudent(student.getStudentId(), holder.itemView.getContext());
-        });
+        // Kiểm tra nếu role là 'employee', ẩn các nút và sự kiện
+        if ("Employee".equals(userRole)) {
+            holder.btnDelete.setVisibility(View.GONE); // Ẩn nút xóa
+            holder.btnEdit.setVisibility(View.GONE);   // Ẩn nút chỉnh sửa
+            holder.itemView.setClickable(false);       // Không thể nhấn vào item
+        } else {
+            // Thiết lập sự kiện xóa cho nút xóa
+            holder.btnDelete.setVisibility(View.VISIBLE);
+            holder.btnDelete.setOnClickListener(v -> {
+                deleteStudent(student.getStudentId(), holder.itemView.getContext());
+            });
 
-        // Thiết lập sự kiện chỉnh sửa cho nút edit
-        holder.btnEdit.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), EditStudentActivity.class);
-            intent.putExtra("studentId", student.getStudentId());
-            holder.itemView.getContext().startActivity(intent);
-        });
+            // Thiết lập sự kiện chỉnh sửa cho nút edit
+            holder.btnEdit.setVisibility(View.VISIBLE);
+            holder.btnEdit.setOnClickListener(v -> {
+                Intent intent = new Intent(holder.itemView.getContext(), EditStudentActivity.class);
+                intent.putExtra("studentId", student.getStudentId());
+                holder.itemView.getContext().startActivity(intent);
+            });
 
-        // Thiết lập sự kiện click cho toàn bộ item để mở Activity mới và truyền studentId
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), StudentDetailActivity.class); // Thay DetailActivity bằng Activity bạn muốn mở
-            intent.putExtra("studentId", student.getStudentId()); // Truyền studentId sang Activity mới
-            holder.itemView.getContext().startActivity(intent);
-        });
+            // Thiết lập sự kiện click cho toàn bộ item để mở Activity mới và truyền studentId
+            holder.itemView.setClickable(true);
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(holder.itemView.getContext(), StudentDetailActivity.class);
+                intent.putExtra("studentId", student.getStudentId());
+                holder.itemView.getContext().startActivity(intent);
+            });
+        }
     }
 
     @Override
@@ -93,7 +105,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     public static class StudentViewHolder extends RecyclerView.ViewHolder {
         private TextView tvStudentId, tvName;
-        private ImageView btnDelete, btnEdit; // Nút xóa và nút edit
+        private ImageView btnDelete, btnEdit;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
