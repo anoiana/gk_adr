@@ -48,7 +48,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             // Nếu vai trò là Employee, ẩn các nút và sự kiện
             holder.btnDeleteUser.setVisibility(View.GONE);
             holder.btnEditUser.setVisibility(View.GONE);
-            holder.itemView.setEnabled(false);  // Không thể nhấn vào item
+            holder.tvUserId.setVisibility(View.GONE);
+            holder.itemView.setEnabled(false);
+            // Không thể nhấn vào item
         } else {
             // Nếu không phải Employee, hiển thị các nút và sự kiện
             holder.btnDeleteUser.setVisibility(View.VISIBLE);
