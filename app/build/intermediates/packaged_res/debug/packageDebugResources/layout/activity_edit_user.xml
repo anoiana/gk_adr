@@ -1,113 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/activity_edit_user.xml -->
+<!-- res/layout/activity_add_user.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
     android:background="@color/blue"
-    android:padding="16dp">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sửa người dùng"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="@color/organe_color"/>
+    android:orientation="vertical"
+    android:gravity="start|top"
+    android:scrollbars="vertical">
     <LinearLayout
+        android:background="@drawable/rounded_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/bluenhealthcare"
-        android:padding="16dp">
-    <!-- User ID (ẩn đi) -->
-    <EditText
-        android:id="@+id/editTextUserId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="User ID"
-        android:visibility="gone"
-        android:inputType="text" />
-    <!-- Tên người dùng -->
-    <EditText
-        android:layout_marginBottom="2sp"
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:paddingStart="10sp"
-        android:hint="Name"
-        android:maxLines="1"
-        android:textSize="14sp"
-        android:inputType="textPersonName"/>
-    <!-- Tuổi -->
-    <EditText
-        android:id="@+id/editTextAge"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:paddingStart="10sp"
-        android:maxLines="1"
-        android:textSize="14sp"
-        android:layout_marginBottom="2sp"
-        android:hint="Age"
-        android:inputType="number" />
+        android:padding="10sp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginBottom="5sp"
+            android:layout_width="match_parent"
+            android:padding="20sp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:background="#EE4E4E"
+            android:text="Sửa Thông tin người dùng"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <LinearLayout
 
-    <!-- Số điện thoại -->
-    <EditText
-        android:id="@+id/editTextPhoneNumber"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:paddingStart="10sp"
-        android:maxLines="1"
-        android:textSize="14sp"
-        android:layout_marginBottom="2sp"
-        android:hint="Phone Number"
-        android:inputType="phone" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <!-- User ID (ẩn đi) -->
+            <EditText
+                android:id="@+id/editTextUserId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User ID"
+                android:visibility="gone"
+                android:inputType="text" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp">
+                <!-- ImageView chính -->
+                <ImageView
+                    android:id="@+id/imageViewProfilePicture"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_background"
+                    android:src="@drawable/ic_placeholder" />
+                <!-- Icon cây bút -->
+                <ImageView
+                    android:id="@+id/buttonSelectProfilePicture"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_background"
+                    android:padding="8dp"
+                    android:src="@drawable/pen"
+                    />
 
-    <!-- Trạng thái -->
-    <Spinner
-        android:backgroundTint="@color/blue"
-        android:id="@+id/spinnerStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2sp"
-        android:hint="Status" />
+            </FrameLayout>
 
-    <!-- Vai trò -->
-    <Spinner
-        android:id="@+id/spinnerRole"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:hint="Role" />
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:padding="15sp"
+                android:background="@drawable/rounded_background"
+                android:hint="Name"
+                android:inputType="textPersonName" />
+            <!-- Tuổi -->
+            <EditText
+                android:id="@+id/editTextAge"
+                android:padding="15sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:inputType="number" />
+            <!-- Số điện thoại -->
+            <EditText
+                android:padding="15sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/rounded_background"
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone" />
 
-    <!-- Nút chọn ảnh đại diện -->
-    <Button
-        android:id="@+id/buttonSelectProfilePicture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:text="Select Profile Picture" />
+            <!-- Trạng thái -->
+            <Spinner
+                android:id="@+id/spinnerStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/rounded_background"
+                android:hint="Status" />
 
-    <ImageView
-        android:id="@+id/imageViewProfilePicture"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_placeholder" />
-
-    <!-- Nút lưu thông tin người dùng -->
-    <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:layout_marginTop="20sp"
-        android:text="Save" />
+            <!-- Vai trò -->
+            <Spinner
+                android:padding="15sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/rounded_background"
+                android:id="@+id/spinnerRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Role" />
+            <!-- Nút chọn ảnh đại diện -->
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/darkblue"
+                android:text="Save"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

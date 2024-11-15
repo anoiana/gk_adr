@@ -1,135 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:background="@color/blue"
-    tools:context=".activity.EditStudentActivity">
+    android:orientation="vertical"
+    android:gravity="start|top"
+    android:scrollbars="vertical">
     <LinearLayout
-        android:backgroundTint="@color/bluenhealthcare"
+        android:background="@drawable/rounded_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/blue"
-        android:gravity="center"
-        android:layout_gravity="center">
+        android:padding="10sp"
+        android:orientation="vertical">
         <TextView
+            android:layout_marginBottom="5sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sửa sinh viên"
+            android:padding="20sp"
             android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:background="#EE4E4E"
+            android:text="Sửa Thông tin sinh viên"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:padding="16dp"
-            android:background="@color/organe_color"/>
+            android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/bluenhealthcare"
-            android:padding="16dp">
-        <!-- Tên sinh viên -->
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_marginBottom="2sp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
             android:background="@color/white"
-            android:paddingStart="10sp"
-            android:hint="Name"
-            android:maxLines="1"
-            android:textSize="14sp"
-            android:inputType="textPersonName" />
-        <!-- Tuổi sinh viên -->
-        <EditText
-            android:id="@+id/editTextAge"
-            android:layout_marginBottom="2sp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:paddingStart="10sp"
-            android:hint="Age"
-            android:maxLines="1"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/editTextName"
-            android:inputType="number" />
-        <!-- Số điện thoại sinh viên -->
-        <EditText
-            android:id="@+id/editTextPhoneNumber"
-            android:layout_marginBottom="2sp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:paddingStart="10sp"
-            android:hint="Phone Number"
-            android:maxLines="1"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/editTextAge"
-            android:inputType="phone" />
+            android:orientation="vertical">
+            <!-- Tên sinh viên -->
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:inputType="textPersonName" />
 
-        <!-- Giới tính sinh viên -->
-        <Spinner
-            android:layout_marginBottom="2sp"
-            android:id="@+id/spinnerGender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber" />
+            <!-- Tuổi sinh viên -->
+            <EditText
+                android:id="@+id/editTextAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"
+                android:inputType="number" />
 
-        <!-- Email sinh viên -->
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_marginBottom="2sp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:paddingStart="10sp"
-            android:hint="Email"
-            android:maxLines="1"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/spinnerGender"
-            android:inputType="textEmailAddress" />
+            <!-- Số điện thoại sinh viên -->
+            <EditText
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextAge"
+                android:inputType="phone" />
 
-        <!-- Địa chỉ sinh viên -->
-        <EditText
+            <!-- Giới tính sinh viên -->
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber" />
 
-            android:id="@+id/editTextAddress"
-            android:layout_marginBottom="2sp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:paddingStart="10sp"
-            android:hint="Address"
-            android:maxLines="1"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
+            <!-- Email sinh viên -->
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinnerGender"
+                android:inputType="textEmailAddress" />
 
-        <!-- Danh sách chứng chỉ dưới dạng CheckBox -->
-        <LinearLayout
-            android:id="@+id/checkboxContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/editTextAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:padding="16dp" />
-        <!-- Nút lưu sinh viên -->
-        <Button
-            android:id="@+id/buttonSaveStudent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:backgroundTint="@color/blue"
-            android:text="Lưu"/>
-            </LinearLayout>
+            <!-- Địa chỉ sinh viên -->
+            <EditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
+
+            <!-- Danh sách chứng chỉ dưới dạng CheckBox -->
+            <LinearLayout
+                android:id="@+id/checkboxContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/editTextAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="16dp" />
+
+            <!-- Nút lưu sinh viên -->
+            <Button
+                android:id="@+id/buttonSaveStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/darkblue"
+                android:layout_gravity="center"
+                android:text="Save Student"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkboxContainer" />
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

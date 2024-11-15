@@ -8,16 +8,17 @@
 
     <!-- Tựa đề danh sách chứng chỉ -->
     <LinearLayout
-        android:background="@color/darkblue"
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#51A7BF"
         android:orientation="horizontal">
         <TextView
-            android:textColor="@color/white"
-            android:id="@+id/tv_certificate_title"
-            android:layout_width="0dp"
+            android:textColor="#000000"
+            android:id="@+id/tv_user_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Danh sách chứng chỉ"
+            android:text="Danh sách Chứng chỉ"
             android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -28,11 +29,9 @@
             android:id="@+id/btn_add_certificate"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/addcus" />
+            android:src="@drawable/addcus"
+            android:layout_gravity="center_vertical"
+            />
     </LinearLayout>
 
     <androidx.appcompat.widget.SearchView
@@ -40,13 +39,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="Tìm kiếm chứng chỉ" />
+
     <!-- RecyclerView để hiển thị danh sách chứng chỉ -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCertificate"
         android:layout_width="match_parent"
-        android:background="@color/bluenhealthcare"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        android:background="#DAF4FF" />
 
 </LinearLayout>

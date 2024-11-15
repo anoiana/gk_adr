@@ -10,12 +10,23 @@
         <item>Locked</item>
     </string-array>
     <color name="black">#FF000000</color>
-    <color name="blue">#51A7DF</color>
-    <color name="bluenhealthcare">#DAF4FF</color>
-    <color name="darkblue">#102C57</color>
-    <color name="organe_color">#EE4E4E</color>
+    <color name="blue">#088395</color>
+    <color name="bluewith">#EBF4F6</color>
+    <color name="borderColor">#CCCCCC</color>
+    <color name="buttonBorderColor">#1B5E20</color>
+    <color name="buttonEndColor">#388E3C</color>
+    <color name="buttonPressedColor">#2E7D32</color>
+    <color name="buttonStartColor">#4CAF50</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="darkblue">#071952</color>
+    <color name="light">#37B7C3</color>
+    <color name="lightBackgroundColor">#F0F0F0</color>
+    <color name="primaryDarkColor">#0288D1</color>
+    <color name="primaryTextColor">#333333</color>
     <color name="selected_item_bg">#6200EE</color>
     <color name="selected_item_text_color">#FFFFFF</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">ad_gk</string>
     <string name="gcm_defaultSenderId" translatable="false">440553102789</string>

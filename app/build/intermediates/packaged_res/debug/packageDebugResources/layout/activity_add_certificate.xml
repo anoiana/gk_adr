@@ -2,90 +2,66 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:padding="16dp"
     android:background="@color/blue"
-    android:paddingTop="50sp"
     android:id="@+id/main"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.AddCertificateActivity">
+    android:orientation="vertical"
+    android:gravity="start|top"
+    android:scrollbars="vertical">
     <LinearLayout
-        android:layout_marginTop="30sp"
-        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/bluenhealthcare"
+        android:padding="10sp"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/organe_color"
-            android:text="Thêm Chứng chỉ"
-            android:layout_marginBottom="20sp"
+            android:padding="20sp"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:padding="10sp"
-            android:textAlignment="center"
-            />
-        <!-- Tên Chứng chỉ -->
-        <EditText
-            android:id="@+id/editTextCertificateName"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:background="@color/white"
-            android:enabled="true"
-            android:hint="Certificate Name"
-            android:maxLines="1"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:textSize="14sp"/>
-
-        <!-- Ngày cấp chứng chỉ -->
-        <EditText
-            android:id="@+id/editTextIssueDate"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:background="@color/white"
-            android:enabled="true"
-            android:hint="Issue Date (dd/mm/yyyy)"
-            android:inputType="date"
-            android:maxLines="1"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:textSize="14sp" />
-
-        <!-- Cơ quan cấp chứng chỉ -->
-        <EditText
-            android:id="@+id/editTextIssuer"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:background="@color/white"
-            android:enabled="true"
-            android:hint="Issuer"
-            android:maxLines="1"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:textSize="14sp" />
-
-        <!-- Nút lưu chứng chỉ -->
-        <Button
-            android:id="@+id/buttonSaveCertificate"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:backgroundTint="@color/blue"
-            android:text="Lưu" />
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:background="#EE4E4E"
+            android:text="Thêm Thông tin Chứng chỉ"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+    <!-- Tên Chứng chỉ -->
+    <EditText
+        android:id="@+id/editTextCertificateName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Certificate Name"
+        android:inputType="text" />
+    <!-- Ngày cấp chứng chỉ -->
+    <EditText
+        android:id="@+id/editTextIssueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Issue Date (dd/mm/yyyy)"
+        android:inputType="date" />
+    <!-- Cơ quan cấp chứng chỉ -->
+    <EditText
+        android:id="@+id/editTextIssuer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Issuer"
+        android:inputType="text" />
+    <!-- Nút lưu chứng chỉ -->
+    <Button
+        android:id="@+id/buttonSaveCertificate"
+        android:backgroundTint="@color/darkblue"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Certificate"
+       />
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
+

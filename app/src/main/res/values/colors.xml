@@ -3,5 +3,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="selected_item_bg">#6200EE</color> <!-- Màu nền khi item được chọn -->
+    <!-- Màu nền khi item được chọn -->
     <color name="selected_item_text_color">#FFFFFF</color> <!-- Màu văn bản khi item được chọn -->
+    <color name="primaryDarkColor">#0288D1</color> <!-- Màu xanh đậm hơn (darker blue) -->
+    <color name="lightBackgroundColor">#F0F0F0</color>
+    <color name="borderColor">#CCCCCC</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="textColorPrimary">#212121</color> <!-- Màu cho văn bản chính -->
+    <color name="textColorSecondary">#757575</color> <!-- Màu cho văn bản phụ -->
+    <color name="buttonStartColor">#4CAF50</color> <!-- Màu bắt đầu -->
+    <color name="buttonEndColor">#388E3C</color> <!-- Màu kết thúc -->
+    <color name="buttonPressedColor">#2E7D32</color> <!-- Màu khi nhấn -->
+    <color name="buttonBorderColor">#1B5E20</color> <!-- Màu đường viền -->
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="darkblue">#071952</color>
+    <color name="blue">#088395</color>
+    <color name="light">#37B7C3</color>
+    <color name="bluewith">#EBF4F6</color><!-- Màu văn bản --><!-- Màu văn bản khi item được chọn -->
 </resources>

@@ -5,44 +5,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.ListUserFragment">
-
     <LinearLayout
-        android:background="@color/darkblue"
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#51A7BF"
         android:orientation="horizontal">
         <TextView
+            android:textColor="#000000"
             android:id="@+id/tv_user_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Danh sách người dùng"
-            android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"/>
-
         <ImageView
-            android:layout_marginEnd="10sp"
             android:id="@+id/btn_add"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/addcus"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
+            android:layout_gravity="center_vertical"
+            />
     </LinearLayout>
-
     <!-- Thanh tìm kiếm -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchViewUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search_view_background"
-        android:queryHint="Tìm kiếm User"
-        android:iconifiedByDefault="false" /> <!-- Giữ SearchView mở mặc định -->
+        android:queryHint="Tìm kiếm User" />
     <!-- ProgressBar - ẩn khi không sử dụng -->
     <ProgressBar
         android:id="@+id/progressBar"
@@ -54,9 +48,10 @@
     <!-- RecyclerView để hiển thị danh sách người dùng -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewUser"
-        android:background="@color/bluenhealthcare"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        android:background="#DAF4FF" />
+
 </LinearLayout>

@@ -2,37 +2,56 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:fillViewport="true">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal">
-
-        <ImageView
-            android:id="@+id/profile_image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:src="@drawable/image2"
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#51A7BF"
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/tv_user_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Người dùng"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/circle_border"/>
-
-        <Button
-            android:id="@+id/btn_change_profile_picture"
+            android:layout_weight="1"/>
+    </LinearLayout>
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_background"
-            android:onClick="onChangeProfilePicture"
-            android:padding="10dp"
-            android:text="Thay Đổi Ảnh Đại Diện"
-            android:textColor="@android:color/white" />
-
+            android:layout_marginTop="16dp">
+            <!-- ImageView chính -->
+            <ImageView
+                android:id="@+id/imageViewProfilePicture"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:background="@drawable/circle_background"
+                android:src="@drawable/default_profile_picture"/>
+            <!-- Icon cây bút -->
+            <ImageView
+                android:id="@+id/btn_select_profile_picture"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background"
+                android:padding="8dp"
+                android:src="@drawable/pen"/>
+        </FrameLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

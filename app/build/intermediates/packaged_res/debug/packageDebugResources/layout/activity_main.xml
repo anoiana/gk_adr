@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <!-- ViewPager2 for Fragments -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -14,12 +15,13 @@
     <!-- BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        app:itemIconTint="@color/blue"
-        app:itemTextColor="@color/blue"
-        app:itemIconSize="20sp"
-        android:background="#102C57"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:itemTextColor="@color/darkblue"
+        app:itemIconTint="@color/darkblue"
+        app:itemIconSize="30sp"
+        android:layout_gravity="center_vertical"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_nav_menu" />
+        android:background="#51A7BF"
+        app:menu="@menu/bottom_nav_menu"/>
 </LinearLayout>

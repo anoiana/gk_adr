@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/custom_shape"
-    android:padding="10dp"
+    android:background="@drawable/rounded_background"
+    android:padding="16dp"
     android:elevation="4dp"
     android:layout_margin="8dp">
     <TextView
@@ -12,47 +12,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User Name"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/bluenhealthcare"
+        android:textColor="#000000"
         android:layout_marginBottom="4dp" />
     <TextView
         android:id="@+id/tvUserRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="admin"
-        android:textSize="20sp"
-        android:textColor="@color/bluenhealthcare"/>
+        android:textSize="18sp"
+        android:textColor="#555555" />
+
     <!-- TextView mới để hiển thị userId -->
     <TextView
         android:id="@+id/tvUserId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User ID "
-        android:textSize="20sp"
-        android:textColor="@color/bluenhealthcare"
+        android:textSize="18sp"
         android:layout_marginTop="8dp" />
 
     <!-- Layout chứa các nút xóa và sửa -->
     <LinearLayout
-        android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="end"
+        android:layout_gravity="end"
         android:layout_marginTop="8dp">
         <ImageView
             android:id="@+id/btn_edit_user"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/pen"
             android:contentDescription="Edit"
             android:layout_marginEnd="16dp" />
 
         <ImageView
             android:id="@+id/btn_delete_user"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/thungrat"
             android:contentDescription="Delete" />
     </LinearLayout>
