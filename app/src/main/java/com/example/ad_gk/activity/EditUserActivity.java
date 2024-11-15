@@ -2,9 +2,11 @@ package com.example.ad_gk.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,13 +16,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
 import com.example.ad_gk.R;
 import com.example.ad_gk.model.User;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class EditUserActivity extends AppCompatActivity {
@@ -39,7 +39,7 @@ public class EditUserActivity extends AppCompatActivity {
 
         // Ánh xạ các view
         editTextName = findViewById(R.id.editTextName);
-        editTextAge = findViewById(R.id.editTextAge);  // Trường age bây giờ là EditText cho số
+        editTextAge = findViewById(R.id.editTextAge);
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         spinnerStatus = findViewById(R.id.spinnerStatus);
         spinnerRole = findViewById(R.id.spinnerRole);
@@ -72,7 +72,7 @@ public class EditUserActivity extends AppCompatActivity {
 
             // Cập nhật dữ liệu xuống Firestore
             if (selectedImageUri != null) {
-                uploadProfilePicture(selectedImageUri, updatedUserName, updatedUserAge, updatedUserPhoneNumber, updatedUserStatus, updatedUserRole);
+                convertImageToBase64AndSave(selectedImageUri, updatedUserName, updatedUserAge, updatedUserPhoneNumber, updatedUserStatus, updatedUserRole);
             } else {
                 updateUserInFirestore(userId, updatedUserName, updatedUserAge, updatedUserPhoneNumber, updatedUserStatus, updatedUserRole, null);
             }
@@ -101,7 +101,10 @@ public class EditUserActivity extends AppCompatActivity {
 
                             // Hiển thị ảnh profile nếu có
                             if (user.getProfilePicture() != null) {
-                                Glide.with(this).load(user.getProfilePicture()).into(imageViewProfilePicture);
+                                // Chuyển đổi Base64 về Bitmap và hiển thị
+                                byte[] decodedString = Base64.decode(user.getProfilePicture(), Base64.DEFAULT);
+                                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                                imageViewProfilePicture.setImageBitmap(decodedByte);
                             }
                         }
                     }
@@ -128,8 +131,7 @@ public class EditUserActivity extends AppCompatActivity {
             if (statusPosition != -1) {
                 spinnerStatus.setSelection(statusPosition);
             } else {
-                // Nếu không tìm thấy, có thể chọn giá trị mặc định
-                spinnerStatus.setSelection(0);
+                spinnerStatus.setSelection(0);  // Giá trị mặc định
             }
         }
 
@@ -139,27 +141,32 @@ public class EditUserActivity extends AppCompatActivity {
             if (rolePosition != -1) {
                 spinnerRole.setSelection(rolePosition);
             } else {
-                // Nếu không tìm thấy, có thể chọn giá trị mặc định
-                spinnerRole.setSelection(0);
+                spinnerRole.setSelection(0);  // Giá trị mặc định
             }
         }
     }
 
-    private void uploadProfilePicture(Uri imageUri, String updatedUserName, int updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole) {
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference().child("profile_pictures/" + userId + ".jpg");
+    private void convertImageToBase64AndSave(Uri imageUri, String updatedUserName, int updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole) {
+        try {
+            // Chuyển đổi ảnh thành Bitmap
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
 
-        storageRef.putFile(imageUri)
-                .addOnSuccessListener(taskSnapshot -> storageRef.getDownloadUrl()
-                        .addOnSuccessListener(uri -> {
-                            updateUserInFirestore(userId, updatedUserName, updatedUserAge, updatedUserPhoneNumber, updatedUserStatus, updatedUserRole, uri.toString());
-                        }))
-                .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Error uploading image", Toast.LENGTH_SHORT).show();
-                });
+            // Chuyển đổi Bitmap thành Base64
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream); // Sử dụng JPEG để nén
+            byte[] byteArray = byteArrayOutputStream.toByteArray();
+            String encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
+            // Cập nhật Firestore
+            updateUserInFirestore(userId, updatedUserName, updatedUserAge, updatedUserPhoneNumber, updatedUserStatus, updatedUserRole, encodedImage);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error converting image to Base64", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void updateUserInFirestore(String userId, String updatedUserName, int updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole, String profilePictureUrl) {
+    private void updateUserInFirestore(String userId, String updatedUserName, int updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole, String profilePictureBase64) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("users").document(userId)
                 .update("name", updatedUserName,
@@ -167,7 +174,7 @@ public class EditUserActivity extends AppCompatActivity {
                         "phoneNumber", updatedUserPhoneNumber,
                         "status", updatedUserStatus,
                         "role", updatedUserRole,
-                        "profilePicture", profilePictureUrl)
+                        "profilePicture", profilePictureBase64)  // Lưu Base64 vào Firestore
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(this, "User updated successfully", Toast.LENGTH_SHORT).show();
                     finish();  // Quay lại Activity trước đó

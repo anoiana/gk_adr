@@ -30,18 +30,24 @@ public class ListCertificateFragment extends Fragment {
     private RecyclerView recyclerViewCertificate;
     private CertificateAdapter certificateAdapter;
     private List<Certificate> certificateList;
-    private List<Certificate> filteredList; // Danh sách để lưu trữ các kết quả tìm kiếm
+    private List<Certificate> filteredList;
+    private String userRole;
+    private  ImageView addButton;// Danh sách để lưu trữ các kết quả tìm kiếm
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_certificate, container, false);
 
+        // Lấy giá trị role từ arguments
+        if (getArguments() != null) {
+            userRole = getArguments().getString("role"); // Nhận role từ Bundle
+        }
         recyclerViewCertificate = view.findViewById(R.id.recyclerViewCertificate);
         recyclerViewCertificate.setLayoutManager(new LinearLayoutManager(getContext()));
 
         certificateList = new ArrayList<>();
         filteredList = new ArrayList<>(); // Khởi tạo danh sách kết quả tìm kiếm
-        certificateAdapter = new CertificateAdapter(filteredList, new CertificateAdapter.OnDeleteClickListener() {
+        certificateAdapter = new CertificateAdapter(filteredList, userRole, new CertificateAdapter.OnDeleteClickListener() {
             @Override
             public void onDelete(Certificate certificate) {
                 deleteCertificate(certificate); // Xóa chứng chỉ khi nhấn nút xóa
@@ -68,7 +74,9 @@ public class ListCertificateFragment extends Fragment {
         // Load certificates from Firestore when fragment is created
         loadCertificates();
 
-        ImageView addButton = view.findViewById(R.id.btn_add_certificate);
+
+        addButton = view.findViewById(R.id.btn_add_certificate);
+        checkUserRole();
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,5 +149,13 @@ public class ListCertificateFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     Toast.makeText(getContext(), "Failed to delete certificate: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
+    }
+
+    private void checkUserRole() {
+        if ("Employee".equals(userRole)) {
+            addButton.setVisibility(View.GONE); // Ẩn nút nếu vai trò là "employee"
+        } else {
+            addButton.setVisibility(View.VISIBLE); // Hiển thị nếu không phải employee
+        }
     }
 }

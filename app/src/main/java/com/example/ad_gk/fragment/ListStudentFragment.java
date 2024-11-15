@@ -33,11 +33,17 @@ public class ListStudentFragment extends Fragment {
     private FirebaseFirestore db;
     private ImageView btnAddStudent;
     private SearchView searchView;
+    private String userRole;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_student, container, false);
 
+
+        // Lấy giá trị role từ arguments
+        if (getArguments() != null) {
+            userRole = getArguments().getString("role"); // Nhận role từ Bundle
+        }
         // Khởi tạo Firestore
         btnAddStudent = view.findViewById(R.id.btn_add_student);
         db = FirebaseFirestore.getInstance();
@@ -49,8 +55,11 @@ public class ListStudentFragment extends Fragment {
 
         // Khởi tạo danh sách và adapter
         studentList = new ArrayList<>();
-        studentAdapter = new StudentAdapter(studentList);
+        studentAdapter = new StudentAdapter(studentList, userRole);
         recyclerView.setAdapter(studentAdapter);
+
+        // Kiểm tra vai trò người dùng và ẩn/hiện nút add
+        checkUserRole();
 
         // Thiết lập sự kiện click cho nút add student
         btnAddStudent.setOnClickListener(v -> {
@@ -136,5 +145,13 @@ public class ListStudentFragment extends Fragment {
                 studentAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void checkUserRole() {
+        if ("Employee".equals(userRole)) {
+            btnAddStudent.setVisibility(View.GONE); // Ẩn nút nếu vai trò là "employee"
+        } else {
+            btnAddStudent.setVisibility(View.VISIBLE); // Hiển thị nếu không phải employee
+        }
     }
 }

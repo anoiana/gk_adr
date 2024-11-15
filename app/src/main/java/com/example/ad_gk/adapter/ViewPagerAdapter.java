@@ -1,5 +1,7 @@
 package com.example.ad_gk.adapter;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -12,29 +14,48 @@ import com.example.ad_gk.fragment.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
 
-    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    private String role;
+    private String userId;
+
+    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity, String role, String userId) {
         super(fragmentActivity);
+        this.role = role; // Nhận role từ MainActivity
+        this.userId = userId; // Nhận userId từ MainActivity
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
+        Fragment fragment;
+
         switch (position) {
             case 0:
-                return new ProfileFragment();
+                fragment = new ProfileFragment();
+                break;
             case 1:
-                return new ListStudentFragment();
+                fragment = new ListStudentFragment();
+                break;
             case 2:
-                return new ListCertificateFragment();
+                fragment = new ListCertificateFragment();
+                break;
             case 3:
-                return new ListUserFragment();
+                fragment = new ListUserFragment();
+                break;
             default:
-                return new ProfileFragment();
+                fragment = new ProfileFragment();
         }
+
+        // Truyền role và userId vào Fragment
+        Bundle bundle = new Bundle();
+        bundle.putString("role", role);
+        bundle.putString("userId", userId);
+        fragment.setArguments(bundle);
+
+        return fragment;
     }
 
     @Override
     public int getItemCount() {
-        return 4; // Number of tabs
+        return 4; // Số lượng tab
     }
 }

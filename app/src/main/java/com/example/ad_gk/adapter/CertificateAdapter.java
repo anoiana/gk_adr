@@ -21,15 +21,18 @@ public class CertificateAdapter extends RecyclerView.Adapter<CertificateAdapter.
 
     private List<Certificate> certificateList;
     private OnDeleteClickListener onDeleteClickListener;
+    private String userRole;  // Biến lưu trữ role của người dùng
 
     // Interface to handle delete action
     public interface OnDeleteClickListener {
-        void onDelete(Certificate certificate); // Callback when delete button is clicked
+        void onDelete(Certificate certificate); // Callback khi nút xóa được nhấn
     }
 
-    public CertificateAdapter(List<Certificate> certificateList, OnDeleteClickListener onDeleteClickListener) {
+    public CertificateAdapter(List<Certificate> certificateList, String userRole, OnDeleteClickListener onDeleteClickListener) {
         this.certificateList = certificateList;
+        this.userRole = userRole;
         this.onDeleteClickListener = onDeleteClickListener;
+         // Nhận vai trò người dùng khi khởi tạo adapter
     }
 
     @NonNull
@@ -44,21 +47,31 @@ public class CertificateAdapter extends RecyclerView.Adapter<CertificateAdapter.
         Certificate certificate = certificateList.get(position);
         holder.bind(certificate);
 
-        // Set click listener for the delete button
-        holder.btnDeleteCertificate.setOnClickListener(v -> {
-            if (onDeleteClickListener != null) {
-                onDeleteClickListener.onDelete(certificate); // Notify listener to remove item
-            }
-        });
+        // Kiểm tra nếu role là 'Employee', ẩn các nút và sự kiện
+        if ("Employee".equals(userRole)) {
+            holder.btnDeleteCertificate.setVisibility(View.GONE);  // Ẩn nút xóa
+            holder.btnEditCertificate.setVisibility(View.GONE);// Ẩn nút chỉnh sửa
+            holder.itemView.setEnabled(false);// Không thể nhấn vào item
 
-        // Thiết lập sự kiện cho nút chỉnh sửa
-        holder.btnEditCertificate.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), EditCertificateActivity.class);
-            intent.putExtra("certificateId", certificate.getCertificateId()); // Truyền certificateId
-            holder.itemView.getContext().startActivity(intent); // Mở activity chỉnh sửa
-        });
+        } else {
+            // Thiết lập sự kiện cho nút xóa
+            holder.btnDeleteCertificate.setVisibility(View.VISIBLE);
+            holder.btnDeleteCertificate.setOnClickListener(v -> {
+                if (onDeleteClickListener != null) {
+                    onDeleteClickListener.onDelete(certificate); // Thông báo tới listener để xóa chứng chỉ
+                }
+            });
 
-        // Thiết lập sự kiện nhấn vào item
+            // Thiết lập sự kiện cho nút chỉnh sửa
+            holder.btnEditCertificate.setVisibility(View.VISIBLE);
+            holder.btnEditCertificate.setOnClickListener(v -> {
+                Intent intent = new Intent(holder.itemView.getContext(), EditCertificateActivity.class);
+                intent.putExtra("certificateId", certificate.getCertificateId()); // Truyền certificateId
+                holder.itemView.getContext().startActivity(intent); // Mở Activity chỉnh sửa
+            });
+        }
+
+        // Thiết lập sự kiện nhấn vào item để hiển thị chi tiết chứng chỉ
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(holder.itemView.getContext(), CertificateDetailActivity.class);
             intent.putExtra("certificateId", certificate.getCertificateId());
@@ -72,6 +85,7 @@ public class CertificateAdapter extends RecyclerView.Adapter<CertificateAdapter.
         return certificateList.size();
     }
 
+    // Phương thức xóa chứng chỉ khỏi danh sách
     public void removeItem(Certificate certificate) {
         int position = certificateList.indexOf(certificate);
         if (position != -1) {
@@ -95,7 +109,6 @@ public class CertificateAdapter extends RecyclerView.Adapter<CertificateAdapter.
         }
 
         public void bind(Certificate certificate) {
-            // Bind data to views
             tvCertificateId.setText(certificate.getCertificateId());
             tvCertificateName.setText(certificate.getName());
         }

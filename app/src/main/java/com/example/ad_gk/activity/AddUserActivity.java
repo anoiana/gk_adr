@@ -2,22 +2,28 @@ package com.example.ad_gk.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.ad_gk.R;
 import com.example.ad_gk.model.User;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class AddUserActivity extends AppCompatActivity {
 
@@ -71,8 +77,33 @@ public class AddUserActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
-            imageViewProfilePicture.setImageURI(imageUri); // Hiển thị ảnh đã chọn
+
+            if (imageUri != null) {
+                try {
+                    // Log để kiểm tra Uri
+                    Bitmap bitmap = getBitmapFromUri(imageUri);
+                    imageViewProfilePicture.setImageBitmap(bitmap); // Hiển thị ảnh đã chọn
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Image Uri is null", Toast.LENGTH_SHORT).show();
+            }
         }
+    }
+
+    // Chuyển ảnh từ Uri thành Bitmap
+    private Bitmap getBitmapFromUri(Uri imageUri) throws IOException {
+        return MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+    }
+
+    // Chuyển Bitmap thành Base64 String
+    private String convertBitmapToBase64(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
     private void saveUserToFirestore() {
@@ -119,10 +150,21 @@ public class AddUserActivity extends AppCompatActivity {
         String phoneNumber = editTextPhoneNumber.getText().toString();
         String status = spinnerStatus.getSelectedItem().toString();
         String role = spinnerRole.getSelectedItem().toString();
-        String profilePicture = (imageUri != null) ? imageUri.toString() : "";
+
+        // Chuyển ảnh thành Base64 String
+        String profilePictureBase64 = "";
+        if (imageUri != null) {
+            try {
+                Bitmap bitmap = getBitmapFromUri(imageUri);
+                profilePictureBase64 = convertBitmapToBase64(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Error converting image to Base64", Toast.LENGTH_SHORT).show();
+            }
+        }
 
         // Tạo đối tượng User
-        User user = new User(userId, name, age, phoneNumber, status, role, profilePicture);
+        User user = new User(userId, name, age, phoneNumber, status, role, profilePictureBase64);
 
         // Thêm dữ liệu vào Firestore
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -138,8 +180,4 @@ public class AddUserActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to add user: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
-
-
-
-
 }

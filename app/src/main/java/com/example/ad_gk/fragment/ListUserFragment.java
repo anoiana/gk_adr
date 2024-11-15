@@ -34,25 +34,31 @@ public class ListUserFragment extends Fragment {
     private RecyclerView recyclerViewUser;
     private UserAdapter userAdapter;
     private List<User> userList;
-    private List<User> filteredList;  // Danh sách để lưu trữ các kết quả tìm kiếm
+    private List<User> filteredList;
+    private String userRole;// Danh sách để lưu trữ các kết quả tìm kiếm
     private Handler handler = new Handler(Looper.getMainLooper());
     private Runnable filterRunnable;
+    ImageView addButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_user, container, false);
 
+
+        if (getArguments() != null) {
+            userRole = getArguments().getString("role"); // Nhận role từ Bundle
+        }
         // Ánh xạ RecyclerView và nút add
         recyclerViewUser = view.findViewById(R.id.recyclerViewUser);
-        ImageView addButton = view.findViewById(R.id.btn_add);
+        addButton = view.findViewById(R.id.btn_add);
         SearchView searchView = view.findViewById(R.id.searchViewUser);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);  // ProgressBar
 
         // Khởi tạo danh sách người dùng
         userList = new ArrayList<>();
         filteredList = new ArrayList<>();
-        userAdapter = new UserAdapter(filteredList);
+        userAdapter = new UserAdapter(filteredList,userRole);
 
         recyclerViewUser.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewUser.setAdapter(userAdapter);
@@ -73,6 +79,7 @@ public class ListUserFragment extends Fragment {
         });
 
         // Thiết lập sự kiện click cho nút add để chuyển sang AddUserActivity
+        checkUserRole();
         addButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), AddUserActivity.class);
             startActivity(intent);
@@ -132,5 +139,13 @@ public class ListUserFragment extends Fragment {
         };
 
         handler.postDelayed(filterRunnable, 300);  // Đợi 300ms trước khi lọc lại
+    }
+
+    private void checkUserRole() {
+        if ("Employee".equals(userRole)  || "Manager".equals(userRole)) {
+            addButton.setVisibility(View.GONE); // Ẩn nút nếu vai trò là "employee"
+        } else {
+            addButton.setVisibility(View.VISIBLE); // Hiển thị nếu không phải employee
+        }
     }
 }
