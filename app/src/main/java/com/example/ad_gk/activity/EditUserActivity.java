@@ -1,7 +1,5 @@
 package com.example.ad_gk.activity;
 
-import static android.content.Intent.getIntent;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -41,7 +39,7 @@ public class EditUserActivity extends AppCompatActivity {
 
         // Ánh xạ các view
         editTextName = findViewById(R.id.editTextName);
-        editTextAge = findViewById(R.id.editTextAge);
+        editTextAge = findViewById(R.id.editTextAge);  // Trường age bây giờ là EditText cho số
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         spinnerStatus = findViewById(R.id.spinnerStatus);
         spinnerRole = findViewById(R.id.spinnerRole);
@@ -58,7 +56,16 @@ public class EditUserActivity extends AppCompatActivity {
         // Sự kiện lưu thông tin người dùng
         buttonSave.setOnClickListener(v -> {
             String updatedUserName = editTextName.getText().toString();
-            String updatedUserAge = editTextAge.getText().toString();
+
+            // Convert age từ String sang int
+            int updatedUserAge = 0;
+            try {
+                updatedUserAge = Integer.parseInt(editTextAge.getText().toString());
+            } catch (NumberFormatException e) {
+                Toast.makeText(EditUserActivity.this, "Please enter a valid age", Toast.LENGTH_SHORT).show();
+                return;  // Nếu không phải số hợp lệ, không tiếp tục
+            }
+
             String updatedUserPhoneNumber = editTextPhoneNumber.getText().toString();
             String updatedUserStatus = spinnerStatus.getSelectedItem().toString();
             String updatedUserRole = spinnerRole.getSelectedItem().toString();
@@ -88,7 +95,7 @@ public class EditUserActivity extends AppCompatActivity {
                         if (user != null) {
                             // Hiển thị dữ liệu lên các trường nhập liệu
                             editTextName.setText(user.getName());
-                            editTextAge.setText(String.valueOf(user.getAge())); // Chuyển thành chuỗi
+                            editTextAge.setText(String.valueOf(user.getAge()));  // Sửa thành String.valueOf(user.getAge()) để hiển thị
                             editTextPhoneNumber.setText(user.getPhoneNumber());
                             setUpSpinners(user.getStatus(), user.getRole());
 
@@ -138,8 +145,7 @@ public class EditUserActivity extends AppCompatActivity {
         }
     }
 
-
-    private void uploadProfilePicture(Uri imageUri, String updatedUserName, String updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole) {
+    private void uploadProfilePicture(Uri imageUri, String updatedUserName, int updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole) {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference().child("profile_pictures/" + userId + ".jpg");
 
@@ -153,7 +159,7 @@ public class EditUserActivity extends AppCompatActivity {
                 });
     }
 
-    private void updateUserInFirestore(String userId, String updatedUserName, String updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole, String profilePictureUrl) {
+    private void updateUserInFirestore(String userId, String updatedUserName, int updatedUserAge, String updatedUserPhoneNumber, String updatedUserStatus, String updatedUserRole, String profilePictureUrl) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("users").document(userId)
                 .update("name", updatedUserName,

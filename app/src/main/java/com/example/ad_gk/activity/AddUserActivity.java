@@ -85,46 +85,60 @@ public class AddUserActivity extends AppCompatActivity {
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult().getDocuments().get(0);
-                        String lastUserId = document.getString("userId");
-
-                        // Nếu đã có userId, tăng số lên 1; nếu chưa có userId, bắt đầu từ "U00001"
-                        String userId;
-                        if (lastUserId != null) {
-                            int lastUserIdNumber = Integer.parseInt(lastUserId.substring(1));  // Lấy phần số từ "U00001"
-                            userId = "U" + String.format("%05d", lastUserIdNumber + 1);  // Tăng số và tạo userId mới
+                        // Kiểm tra nếu không có tài liệu nào (tức là chưa có user trong Firestore)
+                        if (task.getResult().isEmpty()) {
+                            // Nếu không có user, bắt đầu với userId "U00001"
+                            createNewUser("U00001");
                         } else {
-                            userId = "U00001";  // Nếu chưa có user, bắt đầu từ "U00001"
+                            // Nếu có userId, lấy userId cao nhất và tăng lên 1
+                            DocumentSnapshot document = task.getResult().getDocuments().get(0);
+                            String lastUserId = document.getString("userId");
+
+                            // Nếu đã có userId, tăng số lên 1; nếu chưa có userId, bắt đầu từ "U00001"
+                            String userId;
+                            if (lastUserId != null) {
+                                int lastUserIdNumber = Integer.parseInt(lastUserId.substring(1));  // Lấy phần số từ "U00001"
+                                userId = "U" + String.format("%05d", lastUserIdNumber + 1);  // Tăng số và tạo userId mới
+                            } else {
+                                userId = "U00001";  // Nếu chưa có user, bắt đầu từ "U00001"
+                            }
+
+                            // Tạo người dùng mới
+                            createNewUser(userId);
                         }
-
-                        // Lấy dữ liệu người dùng
-                        String name = editTextName.getText().toString();
-                        int age = Integer.parseInt(editTextAge.getText().toString());
-                        String phoneNumber = editTextPhoneNumber.getText().toString();
-                        String status = spinnerStatus.getSelectedItem().toString();
-                        String role = spinnerRole.getSelectedItem().toString();
-                        String profilePicture = (imageUri != null) ? imageUri.toString() : "";
-
-                        // Tạo đối tượng User
-                        User user = new User(userId, name, age, phoneNumber, status, role, profilePicture);
-
-                        // Thêm dữ liệu vào Firestore
-                        db.collection("users").document(userId)
-                                .set(user)
-                                .addOnSuccessListener(aVoid -> {
-                                    Toast.makeText(this, "User added successfully!", Toast.LENGTH_SHORT).show();
-
-                                    // Trả kết quả về ListUserFragment
-                                    Intent resultIntent = new Intent();
-                                    setResult(RESULT_OK, resultIntent);
-                                    finish();
-                                })
-                                .addOnFailureListener(e -> Toast.makeText(this, "Failed to add user: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                     } else {
                         Toast.makeText(this, "Failed to get user data: " + task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
+    private void createNewUser(String userId) {
+        // Lấy dữ liệu người dùng
+        String name = editTextName.getText().toString();
+        int age = Integer.parseInt(editTextAge.getText().toString());
+        String phoneNumber = editTextPhoneNumber.getText().toString();
+        String status = spinnerStatus.getSelectedItem().toString();
+        String role = spinnerRole.getSelectedItem().toString();
+        String profilePicture = (imageUri != null) ? imageUri.toString() : "";
+
+        // Tạo đối tượng User
+        User user = new User(userId, name, age, phoneNumber, status, role, profilePicture);
+
+        // Thêm dữ liệu vào Firestore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users").document(userId)
+                .set(user)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(this, "User added successfully!", Toast.LENGTH_SHORT).show();
+
+                    // Trả kết quả về ListUserFragment
+                    Intent resultIntent = new Intent();
+                    setResult(RESULT_OK, resultIntent);
+                    finish();
+                })
+                .addOnFailureListener(e -> Toast.makeText(this, "Failed to add user: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+    }
+
 
 
 
