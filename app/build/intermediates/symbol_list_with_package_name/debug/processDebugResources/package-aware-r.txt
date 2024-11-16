@@ -3037,10 +3037,12 @@ drawable addcus
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_add_24
+drawable baseline_change_circle_24
 drawable baseline_delete_24
 drawable baseline_edit_24
 drawable baseline_emoji_people_24
 drawable baseline_home_24
+drawable baseline_logout_24
 drawable baseline_person_24
 drawable baseline_receipt_24
 drawable bg_edt
@@ -3056,6 +3058,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable circle_background
 drawable circle_border
+drawable circle_shape
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3285,6 +3288,7 @@ id beginning
 id below
 id bestChoice
 id blocking
+id bntLogin
 id bottom
 id bottom_navigation
 id bounce
@@ -3302,7 +3306,7 @@ id btn_delete_user
 id btn_edit
 id btn_edit_certificate
 id btn_edit_user
-id btn_select_profile_picture
+id buttonLogout
 id buttonPanel
 id buttonSave
 id buttonSaveCertificate
@@ -3447,6 +3451,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageViewEditProfile
 id imageViewProfilePicture
 id immediateStop
 id included
@@ -3693,6 +3698,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textViewAge
+id textViewLoginHistory
+id textViewLoginHistoryLabel
 id textViewName
 id textViewPhoneNumber
 id textViewRole
@@ -3733,15 +3740,8 @@ id tvStudentIds
 id tvUserId
 id tvUserName
 id tvUserRole
-id tv_address
 id tv_certificates_detail
-id tv_class
-id tv_dob
-id tv_email
-id tv_gender
-id tv_major
 id tv_name
-id tv_phone
 id tv_studentAddress_detail
 id tv_studentAge_detail
 id tv_studentCertificates_detail
@@ -3750,7 +3750,6 @@ id tv_studentGender_detail
 id tv_studentId
 id tv_studentName_detail
 id tv_studentPhone_detail
-id tv_student_id
 id tv_user_title
 id unchecked
 id uniform

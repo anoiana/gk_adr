@@ -98,6 +98,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/bntLogin"
             android:layout_width="212dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

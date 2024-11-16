@@ -23,10 +23,12 @@ color textColorSecondary
 color white
 drawable addcus
 drawable baseline_add_24
+drawable baseline_change_circle_24
 drawable baseline_delete_24
 drawable baseline_edit_24
 drawable baseline_emoji_people_24
 drawable baseline_home_24
+drawable baseline_logout_24
 drawable baseline_person_24
 drawable baseline_receipt_24
 drawable bg_edt
@@ -34,6 +36,7 @@ drawable border_style
 drawable btn_background
 drawable circle_background
 drawable circle_border
+drawable circle_shape
 drawable default_profile_picture
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -45,6 +48,7 @@ drawable rounded_background
 drawable textview_background
 drawable thungrat
 drawable tvbg
+id bntLogin
 id bottom_navigation
 id btnBack
 id btn_add
@@ -57,7 +61,7 @@ id btn_delete_user
 id btn_edit
 id btn_edit_certificate
 id btn_edit_user
-id btn_select_profile_picture
+id buttonLogout
 id buttonSave
 id buttonSaveCertificate
 id buttonSaveStudent
@@ -75,6 +79,7 @@ id editTextPhoneNumber
 id editTextUserId
 id edtEmai
 id edtPassword
+id imageViewEditProfile
 id imageViewProfilePicture
 id main
 id nav_certificate
@@ -92,6 +97,8 @@ id spinnerGender
 id spinnerRole
 id spinnerStatus
 id textViewAge
+id textViewLoginHistory
+id textViewLoginHistoryLabel
 id textViewName
 id textViewPhoneNumber
 id textViewRole
@@ -104,15 +111,8 @@ id tvStudentIds
 id tvUserId
 id tvUserName
 id tvUserRole
-id tv_address
 id tv_certificates_detail
-id tv_class
-id tv_dob
-id tv_email
-id tv_gender
-id tv_major
 id tv_name
-id tv_phone
 id tv_studentAddress_detail
 id tv_studentAge_detail
 id tv_studentCertificates_detail
@@ -121,7 +121,6 @@ id tv_studentGender_detail
 id tv_studentId
 id tv_studentName_detail
 id tv_studentPhone_detail
-id tv_student_id
 id tv_user_title
 id viewPager
 layout activity_add_certificate

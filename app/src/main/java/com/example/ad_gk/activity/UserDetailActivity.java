@@ -40,11 +40,6 @@ public class UserDetailActivity extends AppCompatActivity {
         textViewRole = findViewById(R.id.textViewRole);
         textViewLoginHistory = findViewById(R.id.textViewLoginHistory);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
-        btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(v -> {
-            onBackPressed();
-        });
-
         // Lấy dữ liệu người dùng từ Firestore hoặc cơ sở dữ liệu và hiển thị
         loadUserData(userId);
     }

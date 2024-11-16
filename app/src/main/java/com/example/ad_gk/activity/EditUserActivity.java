@@ -31,7 +31,6 @@ public class EditUserActivity extends AppCompatActivity {
     private Button buttonSave;
     private String userId;
     private Uri selectedImageUri;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
