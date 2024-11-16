@@ -44,7 +44,7 @@ public class AddUserActivity extends AppCompatActivity {
         spinnerRole = findViewById(R.id.spinnerRole);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
 
-        // Set up các Spinner
+        // Cài đặt các Spinner
         ArrayAdapter<CharSequence> statusAdapter = ArrayAdapter.createFromResource(this,
                 R.array.status_options, android.R.layout.simple_spinner_item);
         statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -84,10 +84,10 @@ public class AddUserActivity extends AppCompatActivity {
                     imageViewProfilePicture.setImageBitmap(bitmap); // Hiển thị ảnh đã chọn
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Lỗi khi tải ảnh", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(this, "Image Uri is null", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Đường dẫn ảnh bị null", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -137,7 +137,7 @@ public class AddUserActivity extends AppCompatActivity {
                             createNewUser(userId);
                         }
                     } else {
-                        Toast.makeText(this, "Failed to get user data: " + task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Lấy dữ liệu người dùng thất bại: " + task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -158,7 +158,7 @@ public class AddUserActivity extends AppCompatActivity {
                 profilePictureBase64 = convertBitmapToBase64(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(this, "Error converting image to Base64", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Lỗi khi chuyển ảnh thành Base64", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -170,13 +170,13 @@ public class AddUserActivity extends AppCompatActivity {
         db.collection("users").document(userId)
                 .set(user)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(this, "User added successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Người dùng đã được thêm thành công!", Toast.LENGTH_SHORT).show();
 
                     // Trả kết quả về ListUserFragment
                     Intent resultIntent = new Intent();
                     setResult(RESULT_OK, resultIntent);
                     finish();
                 })
-                .addOnFailureListener(e -> Toast.makeText(this, "Failed to add user: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> Toast.makeText(this, "Lỗi khi thêm người dùng: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 }

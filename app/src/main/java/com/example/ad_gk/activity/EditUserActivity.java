@@ -31,6 +31,7 @@ public class EditUserActivity extends AppCompatActivity {
     private Button buttonSave;
     private String userId;
     private Uri selectedImageUri;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,7 @@ public class EditUserActivity extends AppCompatActivity {
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
         buttonSave = findViewById(R.id.buttonSave);
         buttonChangeProfilePicture = findViewById(R.id.buttonSelectProfilePicture);
+
         // Lấy userId từ Intent
         userId = getIntent().getStringExtra("userId");
 
@@ -60,7 +62,7 @@ public class EditUserActivity extends AppCompatActivity {
             try {
                 updatedUserAge = Integer.parseInt(editTextAge.getText().toString());
             } catch (NumberFormatException e) {
-                Toast.makeText(EditUserActivity.this, "Please enter a valid age", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditUserActivity.this, "Vui lòng nhập tuổi hợp lệ", Toast.LENGTH_SHORT).show();
                 return;  // Nếu không phải số hợp lệ, không tiếp tục
             }
 
@@ -108,7 +110,7 @@ public class EditUserActivity extends AppCompatActivity {
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(EditUserActivity.this, "Error loading user data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditUserActivity.this, "Lỗi khi tải dữ liệu người dùng", Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -160,7 +162,7 @@ public class EditUserActivity extends AppCompatActivity {
 
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Error converting image to Base64", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lỗi khi chuyển đổi ảnh thành Base64", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -174,11 +176,11 @@ public class EditUserActivity extends AppCompatActivity {
                         "role", updatedUserRole,
                         "profilePicture", profilePictureBase64)  // Lưu Base64 vào Firestore
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(this, "User updated successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Cập nhật người dùng thành công", Toast.LENGTH_SHORT).show();
                     finish();  // Quay lại Activity trước đó
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Error updating user", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Lỗi khi cập nhật người dùng", Toast.LENGTH_SHORT).show();
                 });
     }
 

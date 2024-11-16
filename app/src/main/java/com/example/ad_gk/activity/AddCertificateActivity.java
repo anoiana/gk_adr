@@ -15,13 +15,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ad_gk.R;
 import com.example.ad_gk.model.Certificate;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;  // Import thêm ArrayList để sử dụng danh sách trống
+import java.util.ArrayList;
 
 public class AddCertificateActivity extends AppCompatActivity {
 
@@ -39,10 +36,10 @@ public class AddCertificateActivity extends AppCompatActivity {
         editTextIssuer = findViewById(R.id.editTextIssuer);
         buttonSaveCertificate = findViewById(R.id.buttonSaveCertificate);
 
-        // Lắng nghe sự kiện nhấn nút Save Certificate
+        // Lắng nghe sự kiện nhấn nút Lưu Chứng Chỉ
         buttonSaveCertificate.setOnClickListener(v -> saveCertificateToFirestore());
 
-        // Edge-to-edge setup
+        // Thiết lập Edge-to-edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -53,7 +50,7 @@ public class AddCertificateActivity extends AppCompatActivity {
     private void saveCertificateToFirestore() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        // Lấy toàn bộ certificate từ Firestore
+        // Lấy toàn bộ danh sách chứng chỉ từ Firestore
         db.collection("certificates").get().addOnCompleteListener(task -> {
             if (task.isSuccessful() && task.getResult() != null) {
                 int maxId = 0;
@@ -68,7 +65,7 @@ public class AddCertificateActivity extends AppCompatActivity {
                             maxId = numericId;
                         }
                     } catch (NumberFormatException e) {
-                        Log.e("CertificateSave", "Error parsing certificateId: " + certId, e);
+                        Log.e("CertificateSave", "Lỗi khi phân tích certificateId: " + certId, e);
                     }
                 }
 
@@ -89,17 +86,15 @@ public class AddCertificateActivity extends AppCompatActivity {
                         .set(certificate)
                         .addOnSuccessListener(aVoid -> {
                             // Thông báo thêm chứng chỉ thành công
-                            Toast.makeText(this, "Certificate added successfully!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Thêm chứng chỉ thành công!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent();
-                            setResult(RESULT_OK, intent);  // Set result to notify that the certificate is added
-                            finish(); // Finish the activity and return to ListCertificateFragment
+                            setResult(RESULT_OK, intent);  // Set kết quả để thông báo rằng chứng chỉ đã được thêm
+                            finish(); // Đóng Activity và quay lại ListCertificateFragment
                         })
-                        .addOnFailureListener(e -> Toast.makeText(this, "Failed to add certificate: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                        .addOnFailureListener(e -> Toast.makeText(this, "Thêm chứng chỉ thất bại: " + e.getMessage(), Toast.LENGTH_SHORT).show());
             } else {
-                Toast.makeText(this, "Failed to retrieve certificates: " + (task.getException() != null ? task.getException().getMessage() : "Unknown error"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Không thể tải danh sách chứng chỉ: " + (task.getException() != null ? task.getException().getMessage() : "Lỗi không xác định"), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
 }

@@ -55,12 +55,12 @@ public class LoginActivity extends AppCompatActivity {
 
             // Kiểm tra thông tin nhập vào
             if (TextUtils.isEmpty(role)) {
-                edtRole.setError("Role is required");
+                edtRole.setError("Vai trò là bắt buộc");
                 return;
             }
 
             if (TextUtils.isEmpty(userId)) {
-                edtUserId.setError("User ID is required");
+                edtUserId.setError("ID người dùng là bắt buộc");
                 return;
             }
 
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful() && task.getResult() != null) {
                         if (!task.getResult().isEmpty()) {
                             DocumentSnapshot document = task.getResult().getDocuments().get(0);
-                            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
 
                             // Lưu thông tin đăng nhập
                             saveLoginHistory(userId);
@@ -96,10 +96,10 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            Toast.makeText(LoginActivity.this, "Invalid role or user ID", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Vai trò hoặc ID người dùng không hợp lệ", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(LoginActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Lỗi: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -140,19 +140,19 @@ public class LoginActivity extends AppCompatActivity {
                             .document(newLoginId)
                             .set(loginHistory)
                             .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(LoginActivity.this, "Login history saved with documentId: " + newLoginId, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Lịch sử đăng nhập đã được lưu với documentId: " + newLoginId, Toast.LENGTH_SHORT).show();
 
                                 // Cập nhật lịch sử đăng nhập vào bảng "users"
                                 updateUserLoginHistory(userId, currentTime);
                             })
                             .addOnFailureListener(e -> {
                                 hideProgressBar();
-                                Toast.makeText(LoginActivity.this, "Failed to save login history: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Không thể lưu lịch sử đăng nhập: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             });
                 })
                 .addOnFailureListener(e -> {
                     hideProgressBar();
-                    Toast.makeText(LoginActivity.this, "Error checking login history: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Lỗi khi kiểm tra lịch sử đăng nhập: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -162,11 +162,11 @@ public class LoginActivity extends AppCompatActivity {
                 .update("historyLogin", com.google.firebase.firestore.FieldValue.arrayUnion(loginTime))
                 .addOnSuccessListener(aVoid -> {
                     hideProgressBar();
-                    Toast.makeText(LoginActivity.this, "User login history updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Lịch sử đăng nhập của người dùng đã được cập nhật", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
                     hideProgressBar();
-                    Toast.makeText(LoginActivity.this, "Failed to update user login history: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Không thể cập nhật lịch sử đăng nhập của người dùng: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 

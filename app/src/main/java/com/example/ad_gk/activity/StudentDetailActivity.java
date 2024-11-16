@@ -81,17 +81,17 @@ public class StudentDetailActivity extends AppCompatActivity {
                     // Load tên của chứng chỉ
                     loadCertificateNames(certificates);
                 } else {
-                    Log.e("StudentDetail", "No such document");
+                    Log.e("StudentDetail", "Không có tài liệu nào như vậy");
                 }
             } else {
-                Log.e("StudentDetail", "get failed with ", task.getException());
+                Log.e("StudentDetail", "Lấy không thành công với ", task.getException());
             }
         });
     }
 
     private void loadCertificateNames(List<String> certificateIds) {
         if (certificateIds == null || certificateIds.isEmpty()) {
-            tvStudentCertificates.setText("Certificates: No certificates");
+            tvStudentCertificates.setText("Certificates: Không có chứng chỉ");
             return;
         }
 

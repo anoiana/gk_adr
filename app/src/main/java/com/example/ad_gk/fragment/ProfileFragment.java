@@ -100,7 +100,7 @@ public class ProfileFragment extends Fragment {
 
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(getActivity(), "Error selecting image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Lỗi khi chọn ảnh", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -121,10 +121,10 @@ public class ProfileFragment extends Fragment {
         // Cập nhật trường ảnh đại diện trong Firestore
         docRef.update("profilePicture", encodedImage)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(getActivity(), "Profile picture updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Cập nhật ảnh đại diện thành công", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getActivity(), "Error updating profile picture", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Lỗi khi cập nhật ảnh đại diện", Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -178,7 +178,7 @@ public class ProfileFragment extends Fragment {
                         if (user != null) {
                             textViewName.setText("Name: " + user.getName());
                             textViewAge.setText("Age: " + user.getAge());
-                            textViewPhoneNumber.setText("Phone Number: " + user.getPhoneNumber());
+                            textViewPhoneNumber.setText("Phone: " + user.getPhoneNumber());
                             textViewStatus.setText("Status: " + user.getStatus());
                             textViewRole.setText("Role: " + user.getRole());
 
@@ -186,7 +186,7 @@ public class ProfileFragment extends Fragment {
                             if (user.getHistoryLogin() != null && !user.getHistoryLogin().isEmpty()) {
                                 displayLoginHistory(user.getHistoryLogin());
                             } else {
-                                textViewLoginHistory.setText("No login history available.");
+                                textViewLoginHistory.setText("Không có lịch sử đăng nhập.");
                             }
 
                             // Kiểm tra và xử lý ảnh đại diện
@@ -202,11 +202,11 @@ public class ProfileFragment extends Fragment {
                             }
                         }
                     } else {
-                        Toast.makeText(getActivity(), "No such user found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Không tìm thấy người dùng", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getActivity(), "Error loading user data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Lỗi khi tải dữ liệu người dùng", Toast.LENGTH_SHORT).show();
                 });
     }
 }

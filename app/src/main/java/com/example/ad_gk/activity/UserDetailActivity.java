@@ -67,7 +67,7 @@ public class UserDetailActivity extends AppCompatActivity {
                             if (user.getHistoryLogin() != null && !user.getHistoryLogin().isEmpty()) {
                                 displayLoginHistory(user.getHistoryLogin());
                             } else {
-                                textViewLoginHistory.setText("No login history available.");
+                                textViewLoginHistory.setText("Không có sẵn lịch sử đăng nhập.");
                             }
 
                             // Kiểm tra và xử lý ảnh đại diện
@@ -83,11 +83,11 @@ public class UserDetailActivity extends AppCompatActivity {
                             }
                         }
                     } else {
-                        Toast.makeText(UserDetailActivity.this, "No such user found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserDetailActivity.this, "Không tìm thấy người dùng này.", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(UserDetailActivity.this, "Error loading user data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserDetailActivity.this, "Lỗi tải khi dữ liệu người dùng.", Toast.LENGTH_SHORT).show();
                 });
     }
 

@@ -31,19 +31,19 @@ public class CertificateDetailActivity extends AppCompatActivity {
         // Xử lý sự kiện nút "Trở về"
         btnBack.setOnClickListener(v -> finish());
 
-        // Khởi tạo Firestore và load chi tiết chứng chỉ
+        // Khởi tạo Firestore và tải chi tiết chứng chỉ
         db = FirebaseFirestore.getInstance();
         String certificateId = getIntent().getStringExtra("certificateId");
         loadCertificateDetails(certificateId);
     }
 
-    // Hàm load chi tiết chứng chỉ từ Firestore
+    // Hàm tải chi tiết chứng chỉ từ Firestore
     private void loadCertificateDetails(String certificateId) {
         db.collection("certificates").document(certificateId)
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        // Lấy dữ liệu từ Firestore và hiển thị lên UI
+                        // Lấy dữ liệu từ Firestore và hiển thị lên giao diện
                         String name = documentSnapshot.getString("name");
                         String issueDate = documentSnapshot.getString("issueDate");
                         String issuer = documentSnapshot.getString("issuer");
@@ -54,7 +54,7 @@ public class CertificateDetailActivity extends AppCompatActivity {
                         tvIssueDate.setText(issueDate);
                         tvIssuer.setText(issuer);
 
-                        // Hiển thị danh sách studentIds và load tên sinh viên
+                        // Hiển thị danh sách studentIds và tải tên sinh viên
                         if (studentIds != null && !studentIds.isEmpty()) {
                             StringBuilder studentNamesText = new StringBuilder();
 
@@ -67,21 +67,21 @@ public class CertificateDetailActivity extends AppCompatActivity {
                                                 String studentName = studentSnapshot.getString("name");
                                                 studentNamesText.append(studentName).append(" (").append(studentId).append(")\n");
                                             } else {
-                                                studentNamesText.append("Unknown student (").append(studentId).append(")\n");
+                                                studentNamesText.append("Sinh viên không xác định (").append(studentId).append(")\n");
                                             }
                                             tvStudentIds.setText(studentNamesText.toString().trim());
                                         })
                                         .addOnFailureListener(e ->
-                                                Toast.makeText(this, "Failed to load student details", Toast.LENGTH_SHORT).show());
+                                                Toast.makeText(this, "Không thể tải chi tiết sinh viên", Toast.LENGTH_SHORT).show());
                             }
                         } else {
-                            tvStudentIds.setText("No students");
+                            tvStudentIds.setText("Không có sinh viên");
                         }
                     } else {
-                        Toast.makeText(this, "Certificate not found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Chứng chỉ không tìm thấy", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e ->
-                        Toast.makeText(this, "Failed to load certificate details", Toast.LENGTH_SHORT).show());
+                        Toast.makeText(this, "Không thể tải chi tiết chứng chỉ", Toast.LENGTH_SHORT).show());
     }
 }

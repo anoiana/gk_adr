@@ -176,8 +176,8 @@ public class EditStudentActivity extends AppCompatActivity {
                     .update("studentIds", FieldValue.arrayUnion(studentId)) // Thêm studentId vào studentIds
                     .addOnFailureListener(e -> {
                         // Gom lỗi vào StringBuilder nếu cập nhật thất bại
-                        errorMessages.append("Failed to update certificate ")
-                                .append(certificateCode).append(": ").append(e.getMessage()).append("\n");
+                        errorMessages.append("Cập nhật chứng chỉ ")
+                                .append(certificateCode).append(" thất bại: ").append(e.getMessage()).append("\n");
                     });
         }
 
@@ -185,7 +185,7 @@ public class EditStudentActivity extends AppCompatActivity {
         if (errorMessages.length() > 0) {
             Toast.makeText(this, errorMessages.toString(), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, "All certificates updated successfully!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cập nhật chứng chỉ thành công!", Toast.LENGTH_SHORT).show();
         }
     }
 }

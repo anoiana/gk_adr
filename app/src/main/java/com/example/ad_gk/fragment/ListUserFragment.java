@@ -35,7 +35,7 @@ public class ListUserFragment extends Fragment {
     private UserAdapter userAdapter;
     private List<User> userList;
     private List<User> filteredList;
-    private String userRole;// Danh sách để lưu trữ các kết quả tìm kiếm
+    private String userRole; // Danh sách để lưu trữ các kết quả tìm kiếm
     private Handler handler = new Handler(Looper.getMainLooper());
     private Runnable filterRunnable;
     ImageView addButton;
@@ -44,7 +44,6 @@ public class ListUserFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_user, container, false);
-
 
         if (getArguments() != null) {
             userRole = getArguments().getString("role"); // Nhận role từ Bundle
@@ -58,7 +57,7 @@ public class ListUserFragment extends Fragment {
         // Khởi tạo danh sách người dùng
         userList = new ArrayList<>();
         filteredList = new ArrayList<>();
-        userAdapter = new UserAdapter(filteredList,userRole);
+        userAdapter = new UserAdapter(filteredList, userRole);
 
         recyclerViewUser.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewUser.setAdapter(userAdapter);
@@ -97,7 +96,7 @@ public class ListUserFragment extends Fragment {
         db.collection("users")
                 .addSnapshotListener((documents, error) -> {
                     if (error != null) {
-                        Toast.makeText(getContext(), "Failed to load users", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Không thể tải danh sách người dùng", Toast.LENGTH_SHORT).show();
                         return;
                     }
 

@@ -80,7 +80,7 @@ public class AddStudentActivity extends AppCompatActivity {
                         }
                     }
                 })
-                .addOnFailureListener(e -> Toast.makeText(this, "Failed to load certificates: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> Toast.makeText(this, "Không thể tải chứng chỉ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void saveStudentToFirestore() {
@@ -146,17 +146,17 @@ public class AddStudentActivity extends AppCompatActivity {
                     db.collection("students").document(studentId)
                             .set(student)
                             .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(this, "Student added successfully!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "Thêm sinh viên thành công!", Toast.LENGTH_SHORT).show();
 
                                 // Sau khi lưu sinh viên, cập nhật lại studentIds trong các chứng chỉ
                                 updateCertificatesWithStudentId(studentId);
                                 setResult(Activity.RESULT_OK);
                                 finish(); // Đóng Activity hoặc chuyển đến một màn hình khác
                             })
-                            .addOnFailureListener(e -> Toast.makeText(this, "Failed to add student: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                            .addOnFailureListener(e -> Toast.makeText(this, "Thêm sinh viên thất bại: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Failed to load students: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Không thể tải danh sách sinh viên: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -171,7 +171,7 @@ public class AddStudentActivity extends AppCompatActivity {
                         // Nếu cập nhật thành công chứng chỉ này, bạn có thể xử lý thêm nếu cần.
                     })
                     .addOnFailureListener(e -> {
-                        Toast.makeText(this, "Failed to update certificate: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Cập nhật chứng chỉ thất bại: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         }
     }

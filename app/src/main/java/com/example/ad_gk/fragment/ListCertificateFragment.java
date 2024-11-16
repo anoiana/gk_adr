@@ -280,10 +280,10 @@ public class ListCertificateFragment extends Fragment {
                 .addOnSuccessListener(aVoid -> {
                     // Xóa khỏi danh sách đã lọc và cập nhật RecyclerView
                     certificateAdapter.removeItem(certificate);
-                    Toast.makeText(getContext(), "Certificate deleted successfully.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Xóa chứng chỉ thành công.", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getContext(), "Failed to delete certificate: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Xóa chứng chỉ thất bại. " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -298,7 +298,7 @@ public class ListCertificateFragment extends Fragment {
 
     private void exportFile() {
         // Tạo tên file Excel
-        String fileName = "andeptrai.xlsx";
+        String fileName = "listCertificate.xlsx";
         FileOutputStream fos = null;
         XSSFWorkbook workbook = null;
 
