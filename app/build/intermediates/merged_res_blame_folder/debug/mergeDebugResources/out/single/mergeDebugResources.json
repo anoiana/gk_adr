@@ -1,246 +1,246 @@
 [
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_edit_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_edit_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_addcus.png.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\addcus.png"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_main.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_bg_edt.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\bg_edt.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_circle_shape.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\circle_shape.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_image2.jpg.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\image2.jpg"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_btn_background.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\btn_background.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_student_detail.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_student_detail.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_certificate_detail.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_certificate_detail.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_delete_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_delete_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_ic_login_hero.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\ic_login_hero.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_delete_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_delete_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_fragment_profile.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\fragment_profile.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_login.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_user_detail.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_user_detail.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_change_circle_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_change_circle_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_emoji_people_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_emoji_people_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\circle_background.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_item_user.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\item_user.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_fragment_list_certificate.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\fragment_list_certificate.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_person_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_person_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_certificate_detail.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_certificate_detail.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\xml_data_extraction_rules.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_tvbg.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\tvbg.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_tvbg.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\tvbg.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_item_certificate.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\item_certificate.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_pen.png.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\pen.png"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_add_student.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_add_student.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_user_detail.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_user_detail.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_item_student.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\item_student.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_rounded_background.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\rounded_background.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_circle_border.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\circle_border.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_ic_login_hero.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\ic_login_hero.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_textview_background.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\textview_background.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_add_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_add_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\xml_backup_rules.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_fragment_list_student.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\fragment_list_student.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_pen.png.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\pen.png"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_add_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_add_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_emoji_people_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_emoji_people_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\menu_bottom_nav_menu.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\menu\\bottom_nav_menu.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_ic_placeholder.jpg.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\ic_placeholder.jpg"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_fragment_list_user.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\fragment_list_user.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_ic_placeholder.jpg.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\ic_placeholder.jpg"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_thungrat.png.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\thungrat.png"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_circle_shape.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\circle_shape.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_bg_edt.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\bg_edt.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_image2.jpg.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\image2.jpg"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_edit_student.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_edit_student.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_addcus.png.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\addcus.png"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_thungrat.png.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\thungrat.png"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_item_certificate.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\item_certificate.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_add_user.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_add_user.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_login.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_logout_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_logout_24.xml"
     },
     {
-        "merged": "com.example.ad_gk.app-debug-5:/layout_activity_add_user.xml.flat",
-        "source": "com.example.ad_gk.app-main-7:/layout/activity_add_user.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_receipt_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_receipt_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_border_style.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\border_style.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_student_detail.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_student_detail.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_default_profile_picture.jpg.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\default_profile_picture.jpg"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_home_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_home_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_logout_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_logout_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_edit_certificate.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_edit_certificate.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_circle_background.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\circle_background.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_fragment_list_student.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\fragment_list_student.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_edit_user.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_edit_user.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_edit_user.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_edit_user.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_btn_background.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\btn_background.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_person_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_add_certificate.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_add_certificate.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_default_profile_picture.jpg.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\default_profile_picture.jpg"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_add_student.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_add_student.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_rounded_background.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\rounded_background.xml"
+        "merged": "com.example.ad_gk.app-debug-39:/layout_activity_login.xml.flat",
+        "source": "com.example.ad_gk.app-main-41:/layout/activity_login.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_edit_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_edit_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_edit_student.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_edit_student.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_fragment_list_certificate.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\fragment_list_certificate.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_home_24.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_fragment_list_user.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\fragment_list_user.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_add_certificate.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_add_certificate.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_change_circle_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_change_circle_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_circle_border.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\circle_border.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_item_student.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\item_student.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_border_style.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\border_style.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\layout_activity_edit_certificate.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\layout\\activity_edit_certificate.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_textview_background.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\textview_background.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_item_user.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\item_user.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_add_user.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_add_user.xml"
     },
     {
-        "merged": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-debug-5:\\drawable_baseline_receipt_24.xml.flat",
-        "source": "D:\\setupapp\\Android\\daemon\\8.7\\com.example.ad_gk.app-main-7:\\drawable\\baseline_receipt_24.xml"
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-mdpi\\ic_launcher.webp"
     }
 ]

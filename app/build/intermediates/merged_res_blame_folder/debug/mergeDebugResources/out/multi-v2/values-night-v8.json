@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.ad_gk.app-mergeDebugResources-3:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.ad_gk.app-mergeDebugResources-37:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\setupapp\\Android\\caches\\transforms-4\\c33183e8e08d04a480376c8c74997a5a\\transformed\\appcompat-1.7.0\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "6,7,8,9,10,11,12,39",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "168,238,322,406,502,604,706,3688",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "233,317,401,497,599,701,795,3772"
-                    }
-                },
-                {
-                    "source": "D:\\setupapp\\Android\\caches\\transforms-4\\0a9b3c88b085fc9e4fef0acacc1cc490\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\0c4108a1ef52fbad8e9aacdfc1a9df12\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "D:\\gk_adr\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\afb5ad335cc6210d41dc162f7fbff6ff\\transformed\\appcompat-1.7.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11,12,39",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "168,238,322,406,502,604,706,3688",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "233,317,401,497,599,701,795,3772"
+                    }
+                },
+                {
+                    "source": "E:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
