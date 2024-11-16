@@ -80,6 +80,11 @@
                 android:layout_height="wrap_content"
                 android:hint="Address" />
 
+            <EditText
+                android:id="@+id/editTextAverageScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="AverageScore" />
             <!-- Danh sách chứng chỉ dưới dạng CheckBox -->
             <LinearLayout
                 android:id="@+id/checkboxContainer"

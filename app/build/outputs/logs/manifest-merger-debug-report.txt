@@ -90,6 +90,10 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from E:\GitHub\Android_GK\gk_adr3\gk_adr\app\src\main\AndroidManifest.xml:5:5-80
 	android:name
 		ADDED from E:\GitHub\Android_GK\gk_adr3\gk_adr\app\src\main\AndroidManifest.xml:5:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\GitHub\Android_GK\gk_adr3\gk_adr\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from E:\GitHub\Android_GK\gk_adr3\gk_adr\app\src\main\AndroidManifest.xml:6:22-78
 meta-data#com.google.android.gms.version
 ADDED from E:\GitHub\Android_GK\gk_adr3\gk_adr\app\src\main\AndroidManifest.xml:7:5-9:65
 	android:value

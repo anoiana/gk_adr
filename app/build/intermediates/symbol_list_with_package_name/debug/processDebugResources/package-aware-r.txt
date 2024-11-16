@@ -3043,6 +3043,7 @@ drawable baseline_edit_24
 drawable baseline_emoji_people_24
 drawable baseline_home_24
 drawable baseline_logout_24
+drawable baseline_menu_open_24
 drawable baseline_person_24
 drawable baseline_receipt_24
 drawable bg_edt
@@ -3306,8 +3307,11 @@ id btn_delete_user
 id btn_edit
 id btn_edit_certificate
 id btn_edit_user
+id btn_more_options
+id btn_more_options_certificate
 id buttonLogout
 id buttonPanel
+id buttonReadStudent
 id buttonSave
 id buttonSaveCertificate
 id buttonSaveStudent
@@ -3389,6 +3393,7 @@ id east
 id edge
 id editTextAddress
 id editTextAge
+id editTextAverageScore
 id editTextCertificateName
 id editTextEmail
 id editTextIssueDate
@@ -3501,6 +3506,9 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id menu_export_file
+id menu_import_file
+id menu_sort_by_avg_score
 id message
 id middle
 id mini
@@ -3744,6 +3752,7 @@ id tv_certificates_detail
 id tv_name
 id tv_studentAddress_detail
 id tv_studentAge_detail
+id tv_studentAverageScore_detail
 id tv_studentCertificates_detail
 id tv_studentEmail_detail
 id tv_studentGender_detail
@@ -3990,6 +3999,8 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
+menu menu_options
+menu menu_options_certificate
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description

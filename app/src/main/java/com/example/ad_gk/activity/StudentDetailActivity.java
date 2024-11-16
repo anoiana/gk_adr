@@ -20,7 +20,7 @@ import java.util.List;
 
 public class StudentDetailActivity extends AppCompatActivity {
 
-    private TextView tvStudentName, tvStudentAge, tvStudentPhone, tvStudentGender, tvStudentEmail, tvStudentAddress, tvStudentCertificates;
+    private TextView tvStudentName, tvStudentAge, tvStudentPhone, tvStudentGender, tvStudentEmail, tvStudentAddress, tvStudentCertificates, tvStudentAverageScore;
     private String studentId;
     private Button back;
 
@@ -41,6 +41,7 @@ public class StudentDetailActivity extends AppCompatActivity {
         tvStudentEmail = findViewById(R.id.tv_studentEmail_detail);
         tvStudentAddress = findViewById(R.id.tv_studentAddress_detail);
         tvStudentCertificates = findViewById(R.id.tv_studentCertificates_detail);
+        tvStudentAverageScore = findViewById(R.id.tv_studentAverageScore_detail);  // Thêm TextView cho điểm trung bình
 
         // Load dữ liệu từ Firestore
         loadStudentData(studentId);
@@ -65,6 +66,7 @@ public class StudentDetailActivity extends AppCompatActivity {
                     String email = document.getString("email");
                     String address = document.getString("address");
                     List<String> certificates = (List<String>) document.get("certificates");
+                    Double averageScore = document.getDouble("averageScore");  // Lấy điểm trung bình từ Firestore
 
                     tvStudentName.setText(name != null ? name : "N/A");
                     tvStudentAge.setText("Age: " + (age > 0 ? age : "N/A"));
@@ -72,6 +74,9 @@ public class StudentDetailActivity extends AppCompatActivity {
                     tvStudentGender.setText("Gender: " + (gender != null ? gender : "N/A"));
                     tvStudentEmail.setText("Email: " + (email != null ? email : "N/A"));
                     tvStudentAddress.setText("Address: " + (address != null ? address : "N/A"));
+
+                    // Hiển thị điểm trung bình
+                    tvStudentAverageScore.setText("Average Score: " + (averageScore != null ? averageScore : "N/A"));
 
                     // Load tên của chứng chỉ
                     loadCertificateNames(certificates);
@@ -104,5 +109,4 @@ public class StudentDetailActivity extends AppCompatActivity {
             });
         }
     }
-
 }

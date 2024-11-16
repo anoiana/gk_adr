@@ -33,6 +33,9 @@ android {
 }
 
 dependencies {
+    implementation ("org.apache.poi:poi:5.2.3")
+    implementation ("org.apache.poi:poi-ooxml:5.2.3")
+    implementation ("com.opencsv:opencsv:5.6")
     implementation ("com.google.firebase:firebase-storage")
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics")

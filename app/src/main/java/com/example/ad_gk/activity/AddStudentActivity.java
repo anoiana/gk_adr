@@ -18,14 +18,13 @@ import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddStudentActivity extends AppCompatActivity {
 
-    private EditText editTextName, editTextAge, editTextPhoneNumber, editTextEmail, editTextAddress;
+    private EditText editTextName, editTextAge, editTextPhoneNumber, editTextEmail, editTextAddress, editTextAverageScore;
     private Spinner spinnerGender;
     private LinearLayout checkboxContainer;
     private Button buttonSaveStudent;
@@ -43,6 +42,7 @@ public class AddStudentActivity extends AppCompatActivity {
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextAddress = findViewById(R.id.editTextAddress);
+        editTextAverageScore = findViewById(R.id.editTextAverageScore); // Thêm trường điểm trung bình
         spinnerGender = findViewById(R.id.spinnerGender);
         checkboxContainer = findViewById(R.id.checkboxContainer);
         buttonSaveStudent = findViewById(R.id.buttonSaveStudent);
@@ -91,6 +91,7 @@ public class AddStudentActivity extends AppCompatActivity {
         String gender = spinnerGender.getSelectedItem().toString();
         String email = editTextEmail.getText().toString();
         String address = editTextAddress.getText().toString();
+        double averageScore = Double.parseDouble(editTextAverageScore.getText().toString()); // Đọc giá trị điểm trung bình
 
         // Lấy danh sách các chứng chỉ đã chọn
         certificates.clear();
@@ -139,7 +140,7 @@ public class AddStudentActivity extends AppCompatActivity {
                     }
 
                     // Tạo đối tượng Student với danh sách chứng chỉ đã chọn
-                    Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, certificates);
+                    Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, certificates, averageScore);
 
                     // Lưu đối tượng vào Firestore
                     db.collection("students").document(studentId)
@@ -182,8 +183,4 @@ public class AddStudentActivity extends AppCompatActivity {
         // Tạo mã mới theo định dạng "STxxxx"
         return String.format("ST%04d", maxNumber); // Ví dụ: "ST0002"
     }
-
-
-
-
 }

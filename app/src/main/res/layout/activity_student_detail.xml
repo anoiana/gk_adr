@@ -30,89 +30,98 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="vertical">
-    <!-- Tên sinh viên -->
-    <TextView
-        android:id="@+id/tv_studentName_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+            <!-- Tên sinh viên -->
+            <TextView
+                android:id="@+id/tv_studentName_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
 
-    <!-- Tuổi sinh viên -->
-    <TextView
-        android:id="@+id/tv_studentAge_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age: 20"
-        android:textSize="20sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Tuổi sinh viên -->
+            <TextView
+                android:id="@+id/tv_studentAge_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age: 20"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Số điện thoại -->
-    <TextView
-        android:id="@+id/tv_studentPhone_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone: 0123456789"
-        android:textSize="20sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Số điện thoại -->
+            <TextView
+                android:id="@+id/tv_studentPhone_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone: 0123456789"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Giới tính -->
-    <TextView
-        android:id="@+id/tv_studentGender_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender: Male"
-        android:textSize="20sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Giới tính -->
+            <TextView
+                android:id="@+id/tv_studentGender_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender: Male"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Email -->
-    <TextView
-        android:id="@+id/tv_studentEmail_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: example@example.com"
-        android:textSize="20sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Email -->
+            <TextView
+                android:id="@+id/tv_studentEmail_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: example@example.com"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Địa chỉ -->
-    <TextView
-        android:id="@+id/tv_studentAddress_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address: 123 Main St, City"
-        android:textSize="20sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Địa chỉ -->
+            <TextView
+                android:id="@+id/tv_studentAddress_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address: 123 Main St, City"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Danh sách chứng chỉ -->
-    <TextView
-        android:id="@+id/tv_certificates_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Certificates:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+            <TextView
+                android:id="@+id/tv_studentAverageScore_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Average Score: N/A"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Chứng chỉ (nếu có) -->
-    <TextView
-        android:id="@+id/tv_studentCertificates_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="no certificates"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"/>
+            <!-- Danh sách chứng chỉ -->
+            <TextView
+                android:id="@+id/tv_certificates_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Certificates:"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Nút quay lại -->
-    <Button
-        android:id="@+id/btn_back_detail"
-        android:backgroundTint="@color/darkblue"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:textSize="16sp"/>
+
+            <!-- Chứng chỉ (nếu có) -->
+            <TextView
+                android:id="@+id/tv_studentCertificates_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="no certificates"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Nút quay lại -->
+            <Button
+                android:id="@+id/btn_back_detail"
+                android:backgroundTint="@color/darkblue"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:textSize="16sp"/>
             </LinearLayout>
     </LinearLayout>
 </LinearLayout>

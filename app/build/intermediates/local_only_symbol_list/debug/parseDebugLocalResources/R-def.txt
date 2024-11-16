@@ -29,6 +29,7 @@ drawable baseline_edit_24
 drawable baseline_emoji_people_24
 drawable baseline_home_24
 drawable baseline_logout_24
+drawable baseline_menu_open_24
 drawable baseline_person_24
 drawable baseline_receipt_24
 drawable bg_edt
@@ -61,7 +62,10 @@ id btn_delete_user
 id btn_edit
 id btn_edit_certificate
 id btn_edit_user
+id btn_more_options
+id btn_more_options_certificate
 id buttonLogout
+id buttonReadStudent
 id buttonSave
 id buttonSaveCertificate
 id buttonSaveStudent
@@ -70,6 +74,7 @@ id buttonUpdateCertificate
 id checkboxContainer
 id editTextAddress
 id editTextAge
+id editTextAverageScore
 id editTextCertificateName
 id editTextEmail
 id editTextIssueDate
@@ -82,6 +87,9 @@ id edtPassword
 id imageViewEditProfile
 id imageViewProfilePicture
 id main
+id menu_export_file
+id menu_import_file
+id menu_sort_by_avg_score
 id nav_certificate
 id nav_home
 id nav_student
@@ -115,6 +123,7 @@ id tv_certificates_detail
 id tv_name
 id tv_studentAddress_detail
 id tv_studentAge_detail
+id tv_studentAverageScore_detail
 id tv_studentCertificates_detail
 id tv_studentEmail_detail
 id tv_studentGender_detail
@@ -142,6 +151,8 @@ layout item_certificate
 layout item_student
 layout item_user
 menu bottom_nav_menu
+menu menu_options
+menu menu_options_certificate
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

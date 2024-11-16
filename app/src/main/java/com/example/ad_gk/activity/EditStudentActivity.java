@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EditStudentActivity extends AppCompatActivity {
-    private EditText editTextName, editTextAge, editTextPhoneNumber, editTextEmail, editTextAddress;
+    private EditText editTextName, editTextAge, editTextPhoneNumber, editTextEmail, editTextAddress, editTextAverageScore;
     private Spinner spinnerGender;
     private LinearLayout checkboxContainer;
     private Button buttonSaveStudent;
@@ -42,6 +42,7 @@ public class EditStudentActivity extends AppCompatActivity {
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextAddress = findViewById(R.id.editTextAddress);
+        editTextAverageScore = findViewById(R.id.editTextAverageScore); // Liên kết view averageScore
         spinnerGender = findViewById(R.id.spinnerGender);
         checkboxContainer = findViewById(R.id.checkboxContainer);
         buttonSaveStudent = findViewById(R.id.buttonSaveStudent);
@@ -78,6 +79,7 @@ public class EditStudentActivity extends AppCompatActivity {
                             editTextPhoneNumber.setText(student.getPhoneNumber());
                             editTextEmail.setText(student.getEmail());
                             editTextAddress.setText(student.getAddress());
+                            editTextAverageScore.setText(String.valueOf(student.getAverageScore())); // Hiển thị averageScore
                             spinnerGender.setSelection(student.getGender().equals("Nam") ? 0 : 1);
                             certificates = student.getCertificates();
                         }
@@ -117,17 +119,25 @@ public class EditStudentActivity extends AppCompatActivity {
         String gender = spinnerGender.getSelectedItem().toString();
         String email = editTextEmail.getText().toString().trim();
         String address = editTextAddress.getText().toString().trim();
+        String averageScoreText = editTextAverageScore.getText().toString().trim();
 
-        if (name.isEmpty() || ageText.isEmpty() || phoneNumber.isEmpty()) {
+        if (name.isEmpty() || ageText.isEmpty() || phoneNumber.isEmpty() || averageScoreText.isEmpty()) {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
 
         int age;
+        double averageScore;
         try {
             age = Integer.parseInt(ageText);
+            averageScore = Double.parseDouble(averageScoreText);
+
+            if (averageScore < 0 || averageScore > 10) {
+                Toast.makeText(this, "Điểm trung bình phải từ 0 đến 10", Toast.LENGTH_SHORT).show();
+                return;
+            }
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Tuổi không hợp lệ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tuổi hoặc điểm trung bình không hợp lệ", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -146,7 +156,7 @@ public class EditStudentActivity extends AppCompatActivity {
         }
 
         // Cập nhật dữ liệu sinh viên
-        Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, certificates);
+        Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, certificates, averageScore);
         db.collection("students").document(studentId)
                 .set(student)
                 .addOnSuccessListener(aVoid -> {
@@ -179,4 +189,3 @@ public class EditStudentActivity extends AppCompatActivity {
         }
     }
 }
-

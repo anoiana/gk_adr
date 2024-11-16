@@ -14,12 +14,12 @@
         android:background="#51A7BF"
         android:orientation="horizontal">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/btn_more_options"-->
-<!--            android:layout_width="24dp"-->
-<!--            android:layout_height="24dp"-->
-<!--            android:src="@drawable/ic_more_vert"-->
-<!--            android:layout_gravity="center_vertical" />-->
+        <ImageView
+            android:id="@+id/btn_more_options"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_menu_open_24"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:id="@+id/tv_user_title"
