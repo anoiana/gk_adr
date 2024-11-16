@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F5F5">
+
     <LinearLayout
         android:padding="16dp"
         android:layout_width="match_parent"
@@ -30,15 +31,17 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/baseline_logout_24"
-
             android:clickable="true"
             android:focusable="true"/>
     </LinearLayout>
-    <!-- RelativeLayout chứa nút đăng xuất -->
-    <RelativeLayout
+
+    <!-- Thêm ScrollView để cuộn nội dung -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!-- Nội dung bên trog ScrollView -->
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- Nội dung chính -->
         <LinearLayout
             android:background="@drawable/rounded_background"
             android:layout_width="match_parent"
@@ -73,6 +76,7 @@
                     android:src="@drawable/pen"
                     />
             </FrameLayout>
+
             <!-- Tên người dùng -->
             <TextView
                 android:id="@+id/textViewName"
@@ -134,6 +138,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:layout_marginTop="16dp"/>
+
             <!-- Danh sách lịch sử đăng nhập -->
             <TextView
                 android:id="@+id/textViewLoginHistory"
@@ -145,5 +150,5 @@
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
 
-    </RelativeLayout>
+    </ScrollView>
 </LinearLayout>

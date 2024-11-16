@@ -108,6 +108,10 @@
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\ic_placeholder.jpg"
     },
     {
+        "merged": "com.example.ad_gk.app-debug-39:/layout_fragment_profile.xml.flat",
+        "source": "com.example.ad_gk.app-main-41:/layout/fragment_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -190,10 +194,6 @@
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_add_student.xml.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_add_student.xml"
-    },
-    {
-        "merged": "com.example.ad_gk.app-debug-39:/layout_activity_login.xml.flat",
-        "source": "com.example.ad_gk.app-main-41:/layout/activity_login.xml"
     },
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_edit_student.xml.flat",
