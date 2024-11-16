@@ -12,6 +12,14 @@
         "source": "com.example.ad_gk.app-main-41:/drawable/circle_background.xml"
     },
     {
+        "merged": "com.example.ad_gk.app-debug-39:/drawable_secure.png.flat",
+        "source": "com.example.ad_gk.app-main-41:/drawable/secure.png"
+    },
+    {
+        "merged": "com.example.ad_gk.app-debug-39:/drawable_agex.png.flat",
+        "source": "com.example.ad_gk.app-main-41:/drawable/agex.png"
+    },
+    {
         "merged": "com.example.ad_gk.app-debug-39:/drawable_baseline_receipt_24.xml.flat",
         "source": "com.example.ad_gk.app-main-41:/drawable/baseline_receipt_24.xml"
     },
@@ -60,8 +68,16 @@
         "source": "com.example.ad_gk.app-main-41:/mipmap-hdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.ad_gk.app-debug-39:/drawable_idcard.png.flat",
+        "source": "com.example.ad_gk.app-main-41:/drawable/idcard.png"
+    },
+    {
         "merged": "com.example.ad_gk.app-debug-39:/drawable_ic_placeholder.jpg.flat",
         "source": "com.example.ad_gk.app-main-41:/drawable/ic_placeholder.jpg"
+    },
+    {
+        "merged": "com.example.ad_gk.app-debug-39:/drawable_age.png.flat",
+        "source": "com.example.ad_gk.app-main-41:/drawable/age.png"
     },
     {
         "merged": "com.example.ad_gk.app-debug-39:/menu_menu_options_certificate.xml.flat",
@@ -184,6 +200,10 @@
         "source": "com.example.ad_gk.app-main-41:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.ad_gk.app-debug-39:/drawable_workforce.png.flat",
+        "source": "com.example.ad_gk.app-main-41:/drawable/workforce.png"
+    },
+    {
         "merged": "com.example.ad_gk.app-debug-39:/drawable_pen.png.flat",
         "source": "com.example.ad_gk.app-main-41:/drawable/pen.png"
     },
@@ -210,6 +230,10 @@
     {
         "merged": "com.example.ad_gk.app-debug-39:/layout_item_user.xml.flat",
         "source": "com.example.ad_gk.app-main-41:/layout/item_user.xml"
+    },
+    {
+        "merged": "com.example.ad_gk.app-debug-39:/drawable_telephone.png.flat",
+        "source": "com.example.ad_gk.app-main-41:/drawable/telephone.png"
     },
     {
         "merged": "com.example.ad_gk.app-debug-39:/drawable_baseline_delete_24.xml.flat",

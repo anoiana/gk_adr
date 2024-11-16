@@ -42,7 +42,6 @@ public class ProfileFragment extends Fragment {
         if (getArguments() != null) {
             userId = getArguments().getString("userId"); // Nhận userId từ Bundle
         }
-
         // Lấy các UI elements
         textViewName = view.findViewById(R.id.textViewName);
         textViewAge = view.findViewById(R.id.textViewAge);
@@ -53,7 +52,6 @@ public class ProfileFragment extends Fragment {
         imageViewProfilePicture = view.findViewById(R.id.imageViewProfilePicture);
         imageViewChangeProfilePicture = view.findViewById(R.id.imageViewEditProfile);
         imgLogout = view.findViewById(R.id.buttonLogout);
-
 
         // Thiết lập sự kiện cho việc thay đổi ảnh đại diện
         imageViewChangeProfilePicture.setOnClickListener(v -> openImagePicker());
@@ -100,7 +98,7 @@ public class ProfileFragment extends Fragment {
 
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(getActivity(), "Lỗi khi chọn ảnh", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Error selecting image", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -121,10 +119,10 @@ public class ProfileFragment extends Fragment {
         // Cập nhật trường ảnh đại diện trong Firestore
         docRef.update("profilePicture", encodedImage)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(getActivity(), "Cập nhật ảnh đại diện thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Profile picture updated", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getActivity(), "Lỗi khi cập nhật ảnh đại diện", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Error updating profile picture", Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -176,17 +174,16 @@ public class ProfileFragment extends Fragment {
 
                         // Cập nhật UI với thông tin người dùng
                         if (user != null) {
-                            textViewName.setText("Name: " + user.getName());
-                            textViewAge.setText("Age: " + user.getAge());
-                            textViewPhoneNumber.setText("Phone: " + user.getPhoneNumber());
-                            textViewStatus.setText("Status: " + user.getStatus());
-                            textViewRole.setText("Role: " + user.getRole());
-
+                            textViewName.setText(user.getName());
+                            textViewAge.setText( " "+ user.getAge());
+                            textViewPhoneNumber.setText(user.getPhoneNumber());
+                            textViewStatus.setText(user.getStatus());
+                            textViewRole.setText(user.getRole());
                             // Xử lý Login History
                             if (user.getHistoryLogin() != null && !user.getHistoryLogin().isEmpty()) {
                                 displayLoginHistory(user.getHistoryLogin());
                             } else {
-                                textViewLoginHistory.setText("Không có lịch sử đăng nhập.");
+                                textViewLoginHistory.setText("No login history available.");
                             }
 
                             // Kiểm tra và xử lý ảnh đại diện
@@ -202,11 +199,11 @@ public class ProfileFragment extends Fragment {
                             }
                         }
                     } else {
-                        Toast.makeText(getActivity(), "Không tìm thấy người dùng", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "No such user found", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getActivity(), "Lỗi khi tải dữ liệu người dùng", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Error loading user data", Toast.LENGTH_SHORT).show();
                 });
     }
 }

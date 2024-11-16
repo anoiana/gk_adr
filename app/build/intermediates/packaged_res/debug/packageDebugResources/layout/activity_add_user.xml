@@ -40,31 +40,36 @@
         android:visibility="gone"
         android:inputType="text" />
             <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp">
-                <!-- ImageView chính -->
-                <ImageView
-                    android:id="@+id/imageViewProfilePicture"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                android:layout_margin="20sp"
+                android:layout_width="170sp"
+                android:layout_height="170sp"
+                android:background="@drawable/circle_background"
+                android:layout_gravity="center">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/circle_background"
-                    android:src="@drawable/ic_placeholder" />
-                <!-- Icon cây bút -->
+                    app:cardCornerRadius="75dp"
+                    app:cardElevation="0dp"
+                    android:clipChildren="true"
+                    android:clipToPadding="true">
+                    <!-- ImageView chính -->
+                    <ImageView
+                        android:id="@+id/imageViewProfilePicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_placeholder" />
+                </androidx.cardview.widget.CardView>
                 <ImageView
                     android:id="@+id/buttonSelectProfilePicture"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="bottom|end"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/circle_background"
+                    android:layout_marginTop="-20dp"
                     android:padding="8dp"
-                    android:src="@drawable/pen"
-                  />
-
+                    android:src="@drawable/pen"/>
+                <!-- Icon cây bút -->
             </FrameLayout>
 
             <EditText
