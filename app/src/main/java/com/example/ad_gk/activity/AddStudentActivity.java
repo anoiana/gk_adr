@@ -2,6 +2,7 @@ package com.example.ad_gk.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -82,7 +83,59 @@ public class AddStudentActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to load certificates: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
+    public void saveStudentToFirestoreFile(String name, int age, String phoneNumber, String gender ,String email, String address){
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("students")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    String studentId;
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        long maxNumber = 0; // Số lớn nhất ban đầu là 0
+                        for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
+                            String docId = document.getId();  // Lấy Document ID
+                            if (docId.startsWith("ST")) { // Đảm bảo Document ID bắt đầu với "ST"
+                                // Cắt phần số sau "ST"
+                                String numberPart = docId.substring(2);
+                                try {
+                                    long currentNumber = Long.parseLong(numberPart);  // Chuyển đổi phần số thành long
+                                    if (currentNumber > maxNumber) {
+                                        maxNumber = currentNumber;  // Lưu lại số lớn nhất
+                                    }
+                                } catch (NumberFormatException e) {
+                                    // Nếu phần số không thể chuyển thành long, bỏ qua tài liệu này
+                                    continue;
+                                }
+                             }
+                        }
+                        // Tạo mã sinh viên mới từ số lớn nhất
+                        studentId = generateNextStudentId(maxNumber);
+                    } else {
+                        // Nếu chưa có sinh viên, tạo mã đầu tiên "ST0001"
+                        studentId = "ST0001";
+                    }
+
+                    // Tạo đối tượng Student với danh sách chứng chỉ đã chọn
+                    Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, new ArrayList<>());
+
+                    // Lưu đối tượng vào Firestore
+                    db.collection("students").document(studentId)
+                            .set(student)
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(this, "Student added successfully!", Toast.LENGTH_SHORT).show();
+
+                                // Sau khi lưu sinh viên, cập nhật lại studentIds trong các chứng chỉ
+                                updateCertificatesWithStudentId(studentId);
+                                setResult(Activity.RESULT_OK);
+                                finish(); // Đóng Activity hoặc chuyển đến một màn hình khác
+                            })
+                            .addOnFailureListener(e -> Toast.makeText(this, "Failed to add student: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Failed to load students: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+
+    }
     private void saveStudentToFirestore() {
         // Lấy dữ liệu từ các trường nhập liệu khác
         String name = editTextName.getText().toString();

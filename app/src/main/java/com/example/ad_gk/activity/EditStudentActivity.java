@@ -26,7 +26,8 @@ public class EditStudentActivity extends AppCompatActivity {
     private Spinner spinnerGender;
     private LinearLayout checkboxContainer;
     private Button buttonSaveStudent;
-
+    private Button btnDowloadCertificate;
+    private Button btnImportCertificate;
     private List<String> certificates = new ArrayList<>();
     private String studentId; // ID của sinh viên cần chỉnh sửa
     private FirebaseFirestore db;
@@ -45,7 +46,8 @@ public class EditStudentActivity extends AppCompatActivity {
         spinnerGender = findViewById(R.id.spinnerGender);
         checkboxContainer = findViewById(R.id.checkboxContainer);
         buttonSaveStudent = findViewById(R.id.buttonSaveStudent);
-
+        btnDowloadCertificate = findViewById(R.id.btn_dowload_certificate);
+        btnImportCertificate = findViewById(R.id.btn_import_certificate);
         // Thiết lập Firebase và lấy studentId từ intent
         db = FirebaseFirestore.getInstance();
         studentId = getIntent().getStringExtra("studentId");

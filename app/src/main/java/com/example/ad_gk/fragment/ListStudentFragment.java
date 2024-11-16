@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.ad_gk.R;
 import com.example.ad_gk.activity.AddStudentActivity;
+import com.example.ad_gk.activity.importStudentData;
 import com.example.ad_gk.adapter.StudentAdapter;
 import com.example.ad_gk.model.Student;
 import com.google.firebase.firestore.CollectionReference;
@@ -26,14 +27,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListStudentFragment extends Fragment {
-
+    private static final int REQUEST_PERMISSION_CODE = 123;  // Mã yêu cầu quyền
     private RecyclerView recyclerView;
     private StudentAdapter studentAdapter;
     private List<Student> studentList;
     private FirebaseFirestore db;
     private ImageView btnAddStudent;
     private SearchView searchView;
-
+    private ImageView buttonFileStudentData;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_student, container, false);
@@ -42,6 +43,7 @@ public class ListStudentFragment extends Fragment {
         btnAddStudent = view.findViewById(R.id.btn_add_student);
         db = FirebaseFirestore.getInstance();
         searchView = view.findViewById(R.id.searchView);
+        buttonFileStudentData = view.findViewById(R.id.btn_file_student_data);
 
         // Thiết lập RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -57,7 +59,11 @@ public class ListStudentFragment extends Fragment {
             Intent intent = new Intent(getActivity(), AddStudentActivity.class);
             startActivityForResult(intent, 1); // Gọi Activity và đợi kết quả
         });
+        buttonFileStudentData.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), importStudentData.class);
+            startActivityForResult(intent, 2);
 
+        });
         // Lấy dữ liệu từ Firestore và lắng nghe sự thay đổi
         loadStudentsFromFirestore();
 
@@ -86,6 +92,9 @@ public class ListStudentFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == getActivity().RESULT_OK) {
+            loadStudentsFromFirestore(); // Nếu thêm thành công, tải lại danh sách sinh viên
+        }
+        if (requestCode == 2 && resultCode == getActivity().RESULT_OK) {
             loadStudentsFromFirestore(); // Nếu thêm thành công, tải lại danh sách sinh viên
         }
     }

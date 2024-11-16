@@ -72,13 +72,27 @@
     <!-- Danh sách chứng chỉ dưới dạng CheckBox -->
     <LinearLayout
         android:id="@+id/checkboxContainer"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/editTextAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp" />
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_dowload_certificate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="dowload certìicate"/>
+        <Button
+            android:id="@+id/btn_import_certificate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="import certìicate"/>
+    </LinearLayout>
 
     <!-- Nút lưu sinh viên -->
     <Button

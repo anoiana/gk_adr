@@ -49,7 +49,7 @@ public class AddCertificateActivity extends AppCompatActivity {
             return insets;
         });
     }
-
+//    private void saveCertificateToFirestoreFile()
     private void saveCertificateToFirestore() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 

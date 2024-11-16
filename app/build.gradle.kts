@@ -33,6 +33,9 @@ android {
 }
 
 dependencies {
+    implementation ("com.opencsv:opencsv:5.6")
+    implementation ("com.google.code.gson:gson:2.8.9")
+    implementation ("com.google.firebase:firebase-firestore:25.1.1")
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.android.gms:play-services-base:18.1.0")
