@@ -2121,6 +2121,7 @@ int color mtrl_textinput_focused_box_stroke_color 0x7f060302
 int color mtrl_textinput_hovered_box_stroke_color 0x7f060303
 int color notification_action_color_filter 0x7f060304
 int color notification_icon_bg_color 0x7f060305
+int color primaryColor 0x7f060323
 int color primaryDarkColor 0x7f060306
 int color primaryTextColor 0x7f060307
 int color primary_dark_material_dark 0x7f060308
@@ -3045,6 +3046,8 @@ int drawable baseline_logout_24 0x7f080084
 int drawable baseline_menu_open_24 0x7f080085
 int drawable baseline_person_24 0x7f080086
 int drawable baseline_receipt_24 0x7f080087
+int drawable baseline_visibility_24 0x7f080119
+int drawable baseline_visibility_off_24 0x7f08011a
 int drawable bg_edt 0x7f080088
 int drawable border_style 0x7f080089
 int drawable btn_background 0x7f08008a
@@ -3310,7 +3313,6 @@ int id btn_more_options 0x7f090074
 int id btn_more_options_certificate 0x7f090252
 int id buttonLogout 0x7f090075
 int id buttonPanel 0x7f090076
-int id buttonReadStudent 0x7f090077
 int id buttonSave 0x7f090078
 int id buttonSaveCertificate 0x7f090079
 int id buttonSaveStudent 0x7f09007a
@@ -3457,6 +3459,7 @@ int id ignoreRequest 0x7f090106
 int id image 0x7f090107
 int id imageViewEditProfile 0x7f090108
 int id imageViewProfilePicture 0x7f090109
+int id imgTogglePassword 0x7f090253
 int id immediateStop 0x7f09010a
 int id included 0x7f09010b
 int id indeterminate 0x7f09010c

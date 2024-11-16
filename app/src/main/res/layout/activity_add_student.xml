@@ -102,15 +102,6 @@
                 android:layout_gravity="center"
                 android:text="Save Student" />
 
-            <!-- Nút đọc file student -->
-            <Button
-                android:id="@+id/buttonReadStudent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/darkblue"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:text="Read Student" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

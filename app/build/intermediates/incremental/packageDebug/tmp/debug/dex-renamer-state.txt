@@ -1,4 +1,4 @@
-#Sat Nov 16 18:59:41 ICT 2024
+#Sat Nov 16 22:49:43 ICT 2024
 base.0=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex

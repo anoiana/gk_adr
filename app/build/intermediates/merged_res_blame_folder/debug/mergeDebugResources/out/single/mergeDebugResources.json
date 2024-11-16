@@ -44,6 +44,10 @@
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_visibility_off_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_visibility_off_24.xml"
+    },
+    {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\menu_menu_options.xml.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\menu\\menu_options.xml"
     },
@@ -68,10 +72,6 @@
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.ad_gk.app-debug-39:/menu_menu_options_certificate.xml.flat",
-        "source": "com.example.ad_gk.app-main-41:/menu/menu_options_certificate.xml"
-    },
-    {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_tvbg.xml.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\tvbg.xml"
     },
@@ -86,6 +86,10 @@
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_pen.png.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\pen.png"
+    },
+    {
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\menu_menu_options_certificate.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\menu\\menu_options_certificate.xml"
     },
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_user_detail.xml.flat",
@@ -114,10 +118,6 @@
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_emoji_people_24.xml.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_emoji_people_24.xml"
-    },
-    {
-        "merged": "com.example.ad_gk.app-debug-39:/layout_fragment_list_certificate.xml.flat",
-        "source": "com.example.ad_gk.app-main-41:/layout/fragment_list_certificate.xml"
     },
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_ic_placeholder.jpg.flat",
@@ -200,12 +200,20 @@
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_person_24.xml"
     },
     {
+        "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\drawable_baseline_visibility_24.xml.flat",
+        "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\drawable\\baseline_visibility_24.xml"
+    },
+    {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_add_student.xml.flat",
         "source": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-main-41:\\layout\\activity_add_student.xml"
+    },
+    {
+        "merged": "com.example.ad_gk.app-debug-39:/layout_activity_login.xml.flat",
+        "source": "com.example.ad_gk.app-main-41:/layout/activity_login.xml"
     },
     {
         "merged": "C:\\Users\\andan\\.gradle\\daemon\\8.7\\com.example.ad_gk.app-debug-39:\\layout_activity_edit_student.xml.flat",

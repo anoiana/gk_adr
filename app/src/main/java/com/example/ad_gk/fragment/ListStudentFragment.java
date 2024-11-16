@@ -347,10 +347,11 @@ public class ListStudentFragment extends Fragment {
 
     private void checkUserRole() {
         // Kiểm tra và hiển thị các nút dựa trên vai trò người dùng
-        if ("admin".equals(userRole)) {
-            btnAddStudent.setVisibility(View.VISIBLE);
-        } else {
+        if ("Employee".equals(userRole)) {
             btnAddStudent.setVisibility(View.GONE);
+            btnMoreOptions.setVisibility(View.GONE);
+        } else {
+            btnAddStudent.setVisibility(View.VISIBLE);
         }
     }
 

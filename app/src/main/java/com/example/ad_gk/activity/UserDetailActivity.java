@@ -23,7 +23,7 @@ public class UserDetailActivity extends AppCompatActivity {
     private TextView textViewName, textViewAge, textViewPhoneNumber, textViewStatus, textViewRole, textViewLoginHistory;
     private ImageView imageViewProfilePicture;
     private String userId;
-    Button btnBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

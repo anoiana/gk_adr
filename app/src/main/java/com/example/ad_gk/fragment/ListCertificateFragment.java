@@ -289,7 +289,8 @@ public class ListCertificateFragment extends Fragment {
 
     private void checkUserRole() {
         if ("Employee".equals(userRole)) {
-            addButton.setVisibility(View.GONE); // Ẩn nút nếu vai trò là "employee"
+            addButton.setVisibility(View.GONE);
+            btnMoreOptions.setVisibility(View.GONE);// Ẩn nút nếu vai trò là "employee"
         } else {
             addButton.setVisibility(View.VISIBLE); // Hiển thị nếu không phải employee
         }

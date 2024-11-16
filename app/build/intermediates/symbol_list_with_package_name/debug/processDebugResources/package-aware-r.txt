@@ -2122,6 +2122,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color primaryColor
 color primaryDarkColor
 color primaryTextColor
 color primary_dark_material_dark
@@ -3046,6 +3047,8 @@ drawable baseline_logout_24
 drawable baseline_menu_open_24
 drawable baseline_person_24
 drawable baseline_receipt_24
+drawable baseline_visibility_24
+drawable baseline_visibility_off_24
 drawable bg_edt
 drawable border_style
 drawable btn_background
@@ -3311,7 +3314,6 @@ id btn_more_options
 id btn_more_options_certificate
 id buttonLogout
 id buttonPanel
-id buttonReadStudent
 id buttonSave
 id buttonSaveCertificate
 id buttonSaveStudent
@@ -3458,6 +3460,7 @@ id ignoreRequest
 id image
 id imageViewEditProfile
 id imageViewProfilePicture
+id imgTogglePassword
 id immediateStop
 id included
 id indeterminate

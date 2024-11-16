@@ -14,6 +14,7 @@ color buttonTextColor
 color darkblue
 color light
 color lightBackgroundColor
+color primaryColor
 color primaryDarkColor
 color primaryTextColor
 color selected_item_bg
@@ -32,6 +33,8 @@ drawable baseline_logout_24
 drawable baseline_menu_open_24
 drawable baseline_person_24
 drawable baseline_receipt_24
+drawable baseline_visibility_24
+drawable baseline_visibility_off_24
 drawable bg_edt
 drawable border_style
 drawable btn_background
@@ -65,7 +68,6 @@ id btn_edit_user
 id btn_more_options
 id btn_more_options_certificate
 id buttonLogout
-id buttonReadStudent
 id buttonSave
 id buttonSaveCertificate
 id buttonSaveStudent
@@ -86,6 +88,7 @@ id edtEmai
 id edtPassword
 id imageViewEditProfile
 id imageViewProfilePicture
+id imgTogglePassword
 id main
 id menu_export_file
 id menu_import_file
