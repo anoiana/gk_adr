@@ -23,6 +23,8 @@ color textColorPrimary
 color textColorSecondary
 color white
 drawable addcus
+drawable age
+drawable agex
 drawable baseline_add_24
 drawable baseline_change_circle_24
 drawable baseline_delete_24
@@ -46,12 +48,16 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_login_hero
 drawable ic_placeholder
+drawable idcard
 drawable image2
 drawable pen
 drawable rounded_background
+drawable secure
+drawable telephone
 drawable textview_background
 drawable thungrat
 drawable tvbg
+drawable workforce
 id bntLogin
 id bottom_navigation
 id btnBack
@@ -86,6 +92,7 @@ id editTextPhoneNumber
 id editTextUserId
 id edtEmai
 id edtPassword
+id iconImageView
 id imageViewEditProfile
 id imageViewProfilePicture
 id imgTogglePassword

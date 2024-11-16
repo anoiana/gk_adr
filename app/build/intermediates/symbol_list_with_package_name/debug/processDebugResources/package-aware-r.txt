@@ -3035,6 +3035,8 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable addcus
+drawable age
+drawable agex
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_add_24
@@ -3112,6 +3114,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_placeholder
 drawable ic_search_black_24
+drawable idcard
 drawable image2
 drawable indeterminate_static
 drawable m3_avd_hide_password
@@ -3188,12 +3191,15 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable pen
 drawable rounded_background
+drawable secure
+drawable telephone
 drawable test_level_drawable
 drawable textview_background
 drawable thungrat
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable tvbg
+drawable workforce
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3452,6 +3458,7 @@ id honorRequest
 id horizontal
 id horizontal_only
 id icon
+id iconImageView
 id icon_group
 id icon_only
 id ifRoom

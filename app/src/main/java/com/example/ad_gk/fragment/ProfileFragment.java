@@ -42,7 +42,6 @@ public class ProfileFragment extends Fragment {
         if (getArguments() != null) {
             userId = getArguments().getString("userId"); // Nhận userId từ Bundle
         }
-
         // Lấy các UI elements
         textViewName = view.findViewById(R.id.textViewName);
         textViewAge = view.findViewById(R.id.textViewAge);
@@ -53,7 +52,6 @@ public class ProfileFragment extends Fragment {
         imageViewProfilePicture = view.findViewById(R.id.imageViewProfilePicture);
         imageViewChangeProfilePicture = view.findViewById(R.id.imageViewEditProfile);
         imgLogout = view.findViewById(R.id.buttonLogout);
-
 
         // Thiết lập sự kiện cho việc thay đổi ảnh đại diện
         imageViewChangeProfilePicture.setOnClickListener(v -> openImagePicker());
@@ -176,12 +174,11 @@ public class ProfileFragment extends Fragment {
 
                         // Cập nhật UI với thông tin người dùng
                         if (user != null) {
-                            textViewName.setText("Name: " + user.getName());
-                            textViewAge.setText("Age: " + user.getAge());
-                            textViewPhoneNumber.setText("Phone Number: " + user.getPhoneNumber());
-                            textViewStatus.setText("Status: " + user.getStatus());
-                            textViewRole.setText("Role: " + user.getRole());
-
+                            textViewName.setText(user.getName());
+                            textViewAge.setText( " "+ user.getAge());
+                            textViewPhoneNumber.setText(user.getPhoneNumber());
+                            textViewStatus.setText(user.getStatus());
+                            textViewRole.setText(user.getRole());
                             // Xử lý Login History
                             if (user.getHistoryLogin() != null && !user.getHistoryLogin().isEmpty()) {
                                 displayLoginHistory(user.getHistoryLogin());
