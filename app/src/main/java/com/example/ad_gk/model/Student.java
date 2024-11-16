@@ -11,12 +11,13 @@ public class Student {
     private String email;      // Email sinh viên
     private String address;    // Địa chỉ sinh viên
     private List<String> certificates; // Danh sách chứng chỉ sinh viên
+    private double averageScore; // Điểm trung bình của sinh viên
 
     // Constructor mặc định cần thiết cho Firestore
     public Student() {}
 
     // Constructor có tham số
-    public Student(String studentId, String name, int age, String phoneNumber, String gender, String email, String address, List<String> certificates) {
+    public Student(String studentId, String name, int age, String phoneNumber, String gender, String email, String address, List<String> certificates, double averageScore) {
         this.studentId = studentId;
         this.name = name;
         this.age = age;
@@ -25,6 +26,7 @@ public class Student {
         this.email = email;
         this.address = address;
         this.certificates = certificates;
+        this.averageScore = averageScore;
     }
 
     // Getter và Setter cho các trường
@@ -51,5 +53,7 @@ public class Student {
 
     public List<String> getCertificates() { return certificates; }
     public void setCertificates(List<String> certificates) { this.certificates = certificates; }
-}
 
+    public double getAverageScore() { return averageScore; }
+    public void setAverageScore(double averageScore) { this.averageScore = averageScore; }
+}

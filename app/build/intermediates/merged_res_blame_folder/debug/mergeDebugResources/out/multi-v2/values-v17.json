@@ -4,7 +4,11 @@
             "outputFile": "com.example.ad_gk.app-mergeDebugResources-37:/values-v17/values-v17.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\nguye\\.gradle\\caches\\transforms-4\\c33183e8e08d04a480376c8c74997a5a\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\afb5ad335cc6210d41dc162f7fbff6ff\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> An
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

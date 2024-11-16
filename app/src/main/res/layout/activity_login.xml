@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,6 +9,8 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context="com.example.ad_gk.activity.LoginActivity">
+
+    <!-- Image Section -->
     <LinearLayout
         android:layout_weight="1"
         android:layout_width="wrap_content"
@@ -19,91 +20,119 @@
         <ImageView
             android:layout_width="336dp"
             android:layout_height="313dp"
-            android:src="@drawable/ic_login_hero"/>
+            android:src="@drawable/ic_login_hero" />
     </LinearLayout>
 
-    <LinearLayout
+    <!-- Form Section -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
-        <TextView
+        <!-- Your Form (EditText, Button, etc.) -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Login"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_marginTop="25dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp">
-
-            <EditText
-                android:id="@+id/edtEmai"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_edt"
-                android:gravity="center_vertical"
-                android:includeFontPadding="false"
-                android:inputType="text"
-                android:paddingLeft="20dp"
-                android:textSize="15sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:background="#FFF"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textColor="#000000"
-                android:textSize="17sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="50dp">
-
-            <EditText
-                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_edt"
-                android:gravity="center_vertical"
-                android:includeFontPadding="false"
-                android:inputType="text"
-                android:paddingLeft="20dp"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:background="#FFF"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="Password"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-        </RelativeLayout>
+                android:gravity="center"
+                android:text="Login"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/bntLogin"
-            android:layout_width="212dp"
+            <!-- Username Field -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp">
+
+                <EditText
+                    android:id="@+id/edtEmai"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edt"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:paddingLeft="20dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="#FFF"
+                    android:text="UserName"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <!-- Password Field -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="50dp">
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edt"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:inputType="textPassword"
+                    android:paddingLeft="20dp"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/imgTogglePassword"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/baseline_visibility_off_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="#FFF"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="Password"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/bntLogin"
+                android:layout_width="212dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:text="Login" />
+        </LinearLayout>
+
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:text="Login" />
-
-    </LinearLayout>
+            android:layout_marginTop="20dp" />
+    </FrameLayout>
 </LinearLayout>

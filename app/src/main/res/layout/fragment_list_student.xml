@@ -13,8 +13,15 @@
         android:layout_height="wrap_content"
         android:background="#51A7BF"
         android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_more_options"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_menu_open_24"
+            android:layout_gravity="center_vertical" />
+
         <TextView
-            android:textColor="#000000"
             android:id="@+id/tv_user_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,21 +31,27 @@
             android:gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textColor="#000000" />
+
         <ImageView
             android:id="@+id/btn_add_student"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/addcus"
             android:layout_gravity="center_vertical"
-            />
+            android:layout_marginEnd="8dp" />
+
+
     </LinearLayout>
+
     <!-- Thanh tìm kiếm -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="Tìm kiếm sinh viên" />
+
     <!-- RecyclerView để hiển thị danh sách sinh viên -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -47,5 +60,4 @@
         android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:background="#DAF4FF" />
-
 </LinearLayout>

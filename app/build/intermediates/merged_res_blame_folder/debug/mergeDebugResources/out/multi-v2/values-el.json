@@ -4,7 +4,45 @@
             "outputFile": "com.example.ad_gk.app-mergeDebugResources-37:/values-el/values-el.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\nguye\\.gradle\\caches\\transforms-4\\c33183e8e08d04a480376c8c74997a5a\\transformed\\appcompat-1.7.0\\res\\values-el\\values-el.xml",
+=======
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\022b6df7e5feda36d675caf5438ee0de\\transformed\\play-services-basement-18.4.0\\res\\values-el\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "159",
+                        "endOffsets": "354"
+                    },
+                    "to": {
+                        "startLines": "56",
+                        "startColumns": "4",
+                        "startOffsets": "5652",
+                        "endColumns": "163",
+                        "endOffsets": "5811"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\15bc2a91a2cb9a68ede8be5b4c1c30f0\\transformed\\core-1.13.0\\res\\values-el\\values-el.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,256,356,459,567,673,790",
+                        "endColumns": "97,102,99,102,107,105,116,100",
+                        "endOffsets": "148,251,351,454,562,668,785,886"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,134",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3543,3641,3744,3844,3947,4055,4161,12510",
+                        "endColumns": "97,102,99,102,107,105,116,100",
+                        "endOffsets": "3636,3739,3839,3942,4050,4156,4273,12606"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\afb5ad335cc6210d41dc162f7fbff6ff\\transformed\\appcompat-1.7.0\\res\\values-el\\values-el.xml",
+>>>>>>> An
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +59,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\nguye\\.gradle\\caches\\transforms-4\\0a9b3c88b085fc9e4fef0acacc1cc490\\transformed\\material-1.12.0\\res\\values-el\\values-el.xml",
+=======
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\0c4108a1ef52fbad8e9aacdfc1a9df12\\transformed\\material-1.12.0\\res\\values-el\\values-el.xml",
+>>>>>>> An
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,6 +82,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\nguye\\.gradle\\caches\\transforms-4\\de585867eaf01ad0cfb3b36463c2d504\\transformed\\play-services-basement-18.4.0\\res\\values-el\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -75,6 +118,9 @@
                 },
                 {
                     "source": "C:\\Users\\nguye\\.gradle\\caches\\transforms-4\\3f6074eb6a3ca12b3d7770bb2b8157ff\\transformed\\play-services-base-18.5.0\\res\\values-el\\values.xml",
+=======
+                    "source": "C:\\Users\\andan\\.gradle\\caches\\transforms-4\\4c822c5b94df430db28471467f3252bf\\transformed\\play-services-base-18.5.0\\res\\values-el\\values.xml",
+>>>>>>> An
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

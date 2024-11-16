@@ -5,9 +5,12 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.ad_gk.R;
@@ -19,10 +22,12 @@ import java.util.Date;
 import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private ImageView imgTogglePassword;
     private EditText edtRole, edtUserId;
     private Button btnLogin;
     private FirebaseFirestore firestore;
+    private boolean isPasswordVisible = false;
+    private ProgressBar progressBar;  // Declare ProgressBar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,35 +35,40 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Ánh xạ các view từ layout
-        edtRole = findViewById(R.id.edtEmai); // Sử dụng trường này để nhập role
-        edtUserId = findViewById(R.id.edtPassword); // Sử dụng trường này để nhập userId
+        edtRole = findViewById(R.id.edtEmai);
+        edtUserId = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.bntLogin);
+        progressBar = findViewById(R.id.progressBar);  // Initialize ProgressBar
 
         // Khởi tạo Firestore
         firestore = FirebaseFirestore.getInstance();
+        imgTogglePassword = findViewById(R.id.imgTogglePassword);
+
+        // Set up toggle password visibility
+        imgTogglePassword.setOnClickListener(v -> togglePasswordVisibility());
 
         // Thiết lập sự kiện click cho nút Login
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Lấy thông tin từ EditText
-                String role = edtRole.getText().toString().trim();
-                String userId = edtUserId.getText().toString().trim();
+        btnLogin.setOnClickListener(view -> {
+            // Lấy thông tin từ EditText
+            String role = edtRole.getText().toString().trim();
+            String userId = edtUserId.getText().toString().trim();
 
-                // Kiểm tra thông tin nhập vào
-                if (TextUtils.isEmpty(role)) {
-                    edtRole.setError("Role is required");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(userId)) {
-                    edtUserId.setError("User ID is required");
-                    return;
-                }
-
-                // Gọi hàm xác thực
-                authenticateUser(role, userId);
+            // Kiểm tra thông tin nhập vào
+            if (TextUtils.isEmpty(role)) {
+                edtRole.setError("Role is required");
+                return;
             }
+
+            if (TextUtils.isEmpty(userId)) {
+                edtUserId.setError("User ID is required");
+                return;
+            }
+
+            // Hiển thị ProgressBar khi bắt đầu xác thực
+            showProgressBar();
+
+            // Gọi hàm xác thực
+            authenticateUser(role, userId);
         });
     }
 
@@ -68,6 +78,9 @@ public class LoginActivity extends AppCompatActivity {
                 .whereEqualTo("userId", userId)
                 .get()
                 .addOnCompleteListener(task -> {
+                    // Ẩn ProgressBar khi hoàn tất xác thực
+                    hideProgressBar();
+
                     if (task.isSuccessful() && task.getResult() != null) {
                         if (!task.getResult().isEmpty()) {
                             DocumentSnapshot document = task.getResult().getDocuments().get(0);
@@ -78,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
 
                             // Chuyển sang MainActivity và truyền role + userId
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            intent.putExtra("userRole", document.getString("role")); // Truyền role
-                            intent.putExtra("userId", userId); // Truyền userId
+                            intent.putExtra("userRole", document.getString("role"));
+                            intent.putExtra("userId", userId);
                             startActivity(intent);
                             finish();
                         } else {
@@ -92,13 +105,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveLoginHistory(String userId) {
-        // Tham chiếu đến bảng loginHistory
+        // Hiển thị ProgressBar khi lưu lịch sử đăng nhập
+        showProgressBar();
+
         firestore.collection("loginHistory")
                 .orderBy("loginId", com.google.firebase.firestore.Query.Direction.DESCENDING)
                 .limit(1)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-                    String newLoginId; // Mặc định là L00001 nếu chưa có bản ghi nào
+                    String newLoginId;
 
                     // Tự động tạo loginId mới nếu đã có dữ liệu
                     if (!queryDocumentSnapshots.isEmpty()) {
@@ -106,8 +121,8 @@ public class LoginActivity extends AppCompatActivity {
                         String latestLoginId = latestDocument.getString("loginId");
 
                         if (latestLoginId != null && latestLoginId.startsWith("L")) {
-                            int latestId = Integer.parseInt(latestLoginId.substring(1)); // Lấy phần số sau 'L'
-                            newLoginId = String.format("L%05d", latestId + 1); // Tăng thêm 1 và định dạng lại
+                            int latestId = Integer.parseInt(latestLoginId.substring(1));
+                            newLoginId = String.format("L%05d", latestId + 1);
                         } else {
                             newLoginId = "L00001";
                         }
@@ -115,43 +130,62 @@ public class LoginActivity extends AppCompatActivity {
                         newLoginId = "L00001";
                     }
 
-                    // Lấy thời gian hiện tại (epoch) và chuyển đổi thành ngày tháng năm và giờ hiện tại
                     long currentTimeMillis = System.currentTimeMillis();
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
-                    String currentTime = sdf.format(new Date(currentTimeMillis)); // Chuyển đổi epoch time thành định dạng ngày giờ
+                    String currentTime = sdf.format(new Date(currentTimeMillis));
 
-                    // Lưu thông tin vào Firestore với documentId trùng với loginId
                     LoginHistory loginHistory = new LoginHistory(newLoginId, currentTime, userId);
 
                     firestore.collection("loginHistory")
-                            .document(newLoginId) // Đặt documentId trùng với loginId
-                            .set(loginHistory) // Sử dụng set() để lưu dữ liệu
+                            .document(newLoginId)
+                            .set(loginHistory)
                             .addOnSuccessListener(aVoid -> {
                                 Toast.makeText(LoginActivity.this, "Login history saved with documentId: " + newLoginId, Toast.LENGTH_SHORT).show();
 
                                 // Cập nhật lịch sử đăng nhập vào bảng "users"
                                 updateUserLoginHistory(userId, currentTime);
                             })
-                            .addOnFailureListener(e ->
-                                    Toast.makeText(LoginActivity.this, "Failed to save login history: " + e.getMessage(), Toast.LENGTH_SHORT).show()
-                            );
+                            .addOnFailureListener(e -> {
+                                hideProgressBar();
+                                Toast.makeText(LoginActivity.this, "Failed to save login history: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            });
                 })
-                .addOnFailureListener(e ->
-                        Toast.makeText(LoginActivity.this, "Error checking login history: " + e.getMessage(), Toast.LENGTH_SHORT).show()
-                );
+                .addOnFailureListener(e -> {
+                    hideProgressBar();
+                    Toast.makeText(LoginActivity.this, "Error checking login history: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void updateUserLoginHistory(String userId, String loginTime) {
-        // Tham chiếu đến bảng users và cập nhật lịch sử đăng nhập của người dùng
         firestore.collection("users")
                 .document(userId)
-                .update("historyLogin", com.google.firebase.firestore.FieldValue.arrayUnion(loginTime)) // Lưu chỉ loginTime vào mảng
+                .update("historyLogin", com.google.firebase.firestore.FieldValue.arrayUnion(loginTime))
                 .addOnSuccessListener(aVoid -> {
+                    hideProgressBar();
                     Toast.makeText(LoginActivity.this, "User login history updated", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
+                    hideProgressBar();
                     Toast.makeText(LoginActivity.this, "Failed to update user login history: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
+    private void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);  // Show the ProgressBar
+    }
+
+    private void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);  // Hide the ProgressBar
+    }
+
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            edtUserId.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            imgTogglePassword.setImageResource(R.drawable.baseline_visibility_off_24);
+        } else {
+            edtUserId.setTransformationMethod(null);
+            imgTogglePassword.setImageResource(R.drawable.baseline_visibility_24);
+        }
+        isPasswordVisible = !isPasswordVisible;
+    }
 }

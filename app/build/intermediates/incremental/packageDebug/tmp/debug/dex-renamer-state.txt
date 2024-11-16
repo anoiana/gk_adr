@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Sat Nov 16 12:46:07 ICT 2024
 base.0=D\:\\git_android\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\git_android\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
@@ -5,15 +6,33 @@ base.2=D\:\\git_android\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergePro
 base.3=D\:\\git_android\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
 base.4=D\:\\git_android\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.5=D\:\\git_android\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+=======
+#Sat Nov 16 22:49:43 ICT 2024
+base.0=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.3=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.4=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.5=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+base.6=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes4.dex
+base.7=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes5.dex
+base.8=E\:\\GitHub\\Android_GK\\gk_adr3\\gk_adr\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes6.dex
+>>>>>>> An
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=15/classes.dex
 path.3=5/classes.dex
 path.4=classes2.dex
 path.5=classes3.dex
+path.6=classes4.dex
+path.7=classes5.dex
+path.8=classes6.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
 renamed.3=classes4.dex
 renamed.4=classes5.dex
 renamed.5=classes6.dex
+renamed.6=classes7.dex
+renamed.7=classes8.dex
+renamed.8=classes9.dex
