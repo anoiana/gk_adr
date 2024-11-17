@@ -216,14 +216,11 @@ public class ListCertificateFragment extends Fragment {
                                 for (Row row : sheet) {
                                     if (row.getRowNum() > 0) { // Bỏ qua dòng tiêu đề
                                         String name = row.getCell(0).getStringCellValue();
-                                        String issueDate = row.getCell(0).getStringCellValue();
+                                        String issueDate = row.getCell(1).getStringCellValue();
                                         String issuer = row.getCell(2).getStringCellValue();
 
-                                        String studentString = row.getCell(3).getStringCellValue();
-                                        List<String> certificates = Arrays.asList(studentString.split(","));
-
                                         // Tạo đối tượng Student với studentId mới
-                                        Certificate certificate = new Certificate(certificateId, name, issueDate, issuer, certificates);
+                                        Certificate certificate = new Certificate(certificateId, name, issueDate, issuer, new ArrayList<>());
 
                                         // Lưu đối tượng vào Firestore
                                         db.collection("certificates").document(certificateId)
@@ -233,7 +230,7 @@ public class ListCertificateFragment extends Fragment {
 
                                                     // Cập nhật danh sách sinh viên
                                                     certificateList.add(certificate);
-                                                    certificateAdapter.notifyDataSetChanged();
+                                                    loadCertificates();
                                                 })
                                                 .addOnFailureListener(e -> Toast.makeText(requireContext(), "Lỗi khi thêm sinh viên: " + e.getMessage(), Toast.LENGTH_SHORT).show());
 

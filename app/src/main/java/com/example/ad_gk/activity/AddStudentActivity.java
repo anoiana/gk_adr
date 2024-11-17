@@ -83,81 +83,170 @@ public class AddStudentActivity extends AppCompatActivity {
                 .addOnFailureListener(e -> Toast.makeText(this, "Không thể tải chứng chỉ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
-    private void saveStudentToFirestore() {
-        // Lấy dữ liệu từ các trường nhập liệu khác
-        String name = editTextName.getText().toString();
-        int age = Integer.parseInt(editTextAge.getText().toString());
-        String phoneNumber = editTextPhoneNumber.getText().toString();
-        String gender = spinnerGender.getSelectedItem().toString();
-        String email = editTextEmail.getText().toString();
-        String address = editTextAddress.getText().toString();
-        double averageScore = Double.parseDouble(editTextAverageScore.getText().toString()); // Đọc giá trị điểm trung bình
 
-        // Lấy danh sách các chứng chỉ đã chọn
-        certificates.clear();
-        for (int i = 0; i < checkboxContainer.getChildCount(); i++) {
-            CheckBox checkBox = (CheckBox) checkboxContainer.getChildAt(i);
-            if (checkBox.isChecked()) {
-                // Lấy chuỗi văn bản của checkbox và tách phần mã
-                String fullText = checkBox.getText().toString();
-                String[] parts = fullText.split(" - "); // Tách chuỗi bằng dấu "-"
-                if (parts.length > 1) {
-                    String certificateCode = parts[1].trim(); // Phần mã là phần thứ hai trong chuỗi
-                    certificates.add(certificateCode); // Thêm mã vào danh sách
-                }
-            }
+    // Phương thức kiểm tra dữ liệu đầu vào
+    private boolean validateInputs() {
+        String name = editTextName.getText().toString().trim();
+        String ageStr = editTextAge.getText().toString().trim();
+        String phoneNumber = editTextPhoneNumber.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String address = editTextAddress.getText().toString().trim();
+        String averageScoreStr = editTextAverageScore.getText().toString().trim();
+
+        // Kiểm tra trường tên
+        if (name.isEmpty()) {
+            editTextName.setError("Vui lòng nhập tên!");
+            return false;
         }
 
-        // Truy vấn tất cả sinh viên và lấy Document ID có phần số lớn nhất
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("students")
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    String studentId;
-                    if (!queryDocumentSnapshots.isEmpty()) {
-                        long maxNumber = 0; // Số lớn nhất ban đầu là 0
-                        for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
-                            String docId = document.getId();  // Lấy Document ID
-                            if (docId.startsWith("ST")) { // Đảm bảo Document ID bắt đầu với "ST"
-                                // Cắt phần số sau "ST"
-                                String numberPart = docId.substring(2);
-                                try {
-                                    long currentNumber = Long.parseLong(numberPart);  // Chuyển đổi phần số thành long
-                                    if (currentNumber > maxNumber) {
-                                        maxNumber = currentNumber;  // Lưu lại số lớn nhất
+        // Kiểm tra trường tuổi
+        if (ageStr.isEmpty()) {
+            editTextAge.setError("Vui lòng nhập tuổi!");
+            return false;
+        }
+        int age;
+        try {
+            age = Integer.parseInt(ageStr);
+            if (age < 16 || age > 120) {
+                editTextAge.setError("Tuổi phải nằm trong khoảng 16-120!");
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            editTextAge.setError("Tuổi không hợp lệ!");
+            return false;
+        }
+
+        // Kiểm tra số điện thoại
+        if (phoneNumber.isEmpty()) {
+            editTextPhoneNumber.setError("Vui lòng nhập số điện thoại!");
+            return false;
+        }
+        if (!phoneNumber.matches("\\d{10}")) { // Kiểm tra có đúng 10 chữ số không
+            editTextPhoneNumber.setError("Số điện thoại phải có 10 chữ số!");
+            return false;
+        }
+
+        // Kiểm tra email
+        if (email.isEmpty()) {
+            editTextEmail.setError("Vui lòng nhập email!");
+            return false;
+        }
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.setError("Email không hợp lệ!");
+            return false;
+        }
+
+        // Kiểm tra địa chỉ
+        if (address.isEmpty()) {
+            editTextAddress.setError("Vui lòng nhập địa chỉ!");
+            return false;
+        }
+
+        // Kiểm tra điểm trung bình
+        if (averageScoreStr.isEmpty()) {
+            editTextAverageScore.setError("Vui lòng nhập điểm trung bình!");
+            return false;
+        }
+        double averageScore;
+        try {
+            averageScore = Double.parseDouble(averageScoreStr);
+            if (averageScore < 0.0 || averageScore > 10.0) {
+                editTextAverageScore.setError("Điểm trung bình phải nằm trong khoảng 0.0 - 10.0!");
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            editTextAverageScore.setError("Điểm trung bình không hợp lệ!");
+            return false;
+        }
+
+        // Kiểm tra giới tính
+        if (spinnerGender.getSelectedItem() == null || spinnerGender.getSelectedItem().toString().isEmpty()) {
+            Toast.makeText(this, "Vui lòng chọn giới tính!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true; // Tất cả dữ liệu hợp lệ
+    }
+
+    private void saveStudentToFirestore() {
+
+        if (!validateInputs()) {
+            return;
+        }
+            // Lấy dữ liệu từ các trường nhập liệu khác
+            String name = editTextName.getText().toString();
+            int age = Integer.parseInt(editTextAge.getText().toString());
+            String phoneNumber = editTextPhoneNumber.getText().toString();
+            String gender = spinnerGender.getSelectedItem().toString();
+            String email = editTextEmail.getText().toString();
+            String address = editTextAddress.getText().toString();
+            double averageScore = Double.parseDouble(editTextAverageScore.getText().toString()); // Đọc giá trị điểm trung bình
+
+            // Lấy danh sách các chứng chỉ đã chọn
+            certificates.clear();
+            for (int i = 0; i < checkboxContainer.getChildCount(); i++) {
+                CheckBox checkBox = (CheckBox) checkboxContainer.getChildAt(i);
+                if (checkBox.isChecked()) {
+                    // Lấy chuỗi văn bản của checkbox và tách phần mã
+                    String fullText = checkBox.getText().toString();
+                    String[] parts = fullText.split(" - "); // Tách chuỗi bằng dấu "-"
+                    if (parts.length > 1) {
+                        String certificateCode = parts[1].trim(); // Phần mã là phần thứ hai trong chuỗi
+                        certificates.add(certificateCode); // Thêm mã vào danh sách
+                    }
+                }
+            }
+
+            // Truy vấn tất cả sinh viên và lấy Document ID có phần số lớn nhất
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("students")
+                    .get()
+                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                        String studentId;
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            long maxNumber = 0; // Số lớn nhất ban đầu là 0
+                            for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
+                                String docId = document.getId();  // Lấy Document ID
+                                if (docId.startsWith("ST")) { // Đảm bảo Document ID bắt đầu với "ST"
+                                    // Cắt phần số sau "ST"
+                                    String numberPart = docId.substring(2);
+                                    try {
+                                        long currentNumber = Long.parseLong(numberPart);  // Chuyển đổi phần số thành long
+                                        if (currentNumber > maxNumber) {
+                                            maxNumber = currentNumber;  // Lưu lại số lớn nhất
+                                        }
+                                    } catch (NumberFormatException e) {
+                                        // Nếu phần số không thể chuyển thành long, bỏ qua tài liệu này
+                                        continue;
                                     }
-                                } catch (NumberFormatException e) {
-                                    // Nếu phần số không thể chuyển thành long, bỏ qua tài liệu này
-                                    continue;
                                 }
                             }
+                            // Tạo mã sinh viên mới từ số lớn nhất
+                            studentId = generateNextStudentId(maxNumber);
+                        } else {
+                            // Nếu chưa có sinh viên, tạo mã đầu tiên "ST0001"
+                            studentId = "ST0001";
                         }
-                        // Tạo mã sinh viên mới từ số lớn nhất
-                        studentId = generateNextStudentId(maxNumber);
-                    } else {
-                        // Nếu chưa có sinh viên, tạo mã đầu tiên "ST0001"
-                        studentId = "ST0001";
-                    }
 
-                    // Tạo đối tượng Student với danh sách chứng chỉ đã chọn
-                    Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, certificates, averageScore);
+                        // Tạo đối tượng Student với danh sách chứng chỉ đã chọn
+                        Student student = new Student(studentId, name, age, phoneNumber, gender, email, address, certificates, averageScore);
 
-                    // Lưu đối tượng vào Firestore
-                    db.collection("students").document(studentId)
-                            .set(student)
-                            .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(this, "Thêm sinh viên thành công!", Toast.LENGTH_SHORT).show();
+                        // Lưu đối tượng vào Firestore
+                        db.collection("students").document(studentId)
+                                .set(student)
+                                .addOnSuccessListener(aVoid -> {
+                                    Toast.makeText(this, "Thêm sinh viên thành công!", Toast.LENGTH_SHORT).show();
 
-                                // Sau khi lưu sinh viên, cập nhật lại studentIds trong các chứng chỉ
-                                updateCertificatesWithStudentId(studentId);
-                                setResult(Activity.RESULT_OK);
-                                finish(); // Đóng Activity hoặc chuyển đến một màn hình khác
-                            })
-                            .addOnFailureListener(e -> Toast.makeText(this, "Thêm sinh viên thất bại: " + e.getMessage(), Toast.LENGTH_SHORT).show());
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Không thể tải danh sách sinh viên: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+                                    // Sau khi lưu sinh viên, cập nhật lại studentIds trong các chứng chỉ
+                                    updateCertificatesWithStudentId(studentId);
+                                    setResult(Activity.RESULT_OK);
+                                    finish(); // Đóng Activity hoặc chuyển đến một màn hình khác
+                                })
+                                .addOnFailureListener(e -> Toast.makeText(this, "Thêm sinh viên thất bại: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(this, "Không thể tải danh sách sinh viên: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    });
     }
 
     private void updateCertificatesWithStudentId(String studentId) {

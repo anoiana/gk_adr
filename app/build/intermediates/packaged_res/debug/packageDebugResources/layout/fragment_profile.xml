@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="#51A7BF">
     <LinearLayout
         android:padding="16dp"
         android:layout_width="match_parent"
@@ -65,32 +65,35 @@
                 android:layout_height="170sp"
                 android:background="@drawable/circle_background"
                 android:layout_gravity="center">
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="75dp"
-                app:cardElevation="0dp"
-                android:clipChildren="true"
-                android:clipToPadding="true">
-                <!-- ImageView chính -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="75dp"
+                    app:cardElevation="0dp"
+                    android:clipChildren="true"
+                    android:clipToPadding="true">
+                    <!-- ImageView chính -->
+                    <ImageView
+                        android:id="@+id/imageViewProfilePicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_placeholder" />
+
+                </androidx.cardview.widget.CardView>
+
+
                 <ImageView
-                    android:id="@+id/imageViewProfilePicture"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_placeholder" />
-            </androidx.cardview.widget.CardView>
-            <ImageView
-                android:id="@+id/imageViewEditProfile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginTop="-20dp"
-                android:padding="8dp"
-                android:src="@drawable/pen"/>
-            <!-- Icon cây bút -->
+                    android:id="@+id/imageViewEditProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginTop="-20dp"
+                    android:padding="8dp"
+                    android:src="@drawable/pen"/>
             </FrameLayout>
+
             <!-- Tên người dùng -->
             <LinearLayout
                 android:layout_marginTop="10sp"
@@ -224,6 +227,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="3sp"
                 android:background="@color/darkblue"/>
+
+
             <!-- Lịch sử đăng nhập -->
             <TextView
                 android:id="@+id/textViewLoginHistoryLabel"

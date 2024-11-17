@@ -76,10 +76,10 @@ public class UserDetailActivity extends AppCompatActivity {
                                 if (bitmap != null) {
                                     imageViewProfilePicture.setImageBitmap(bitmap);
                                 } else {
-                                    imageViewProfilePicture.setImageResource(R.drawable.default_profile_picture);
+                                    imageViewProfilePicture.setImageResource(R.drawable.ic_placeholder);
                                 }
                             } else {
-                                imageViewProfilePicture.setImageResource(R.drawable.default_profile_picture);
+                                imageViewProfilePicture.setImageResource(R.drawable.ic_placeholder);
                             }
                         }
                     } else {
@@ -98,18 +98,11 @@ public class UserDetailActivity extends AppCompatActivity {
         // Duyệt qua từng phần tử của historyLogin và thêm vào TextView
         new Thread(() -> {
             for (String login : historyLogin) {
-                try {
-                    // Chờ một khoảng thời gian (mô phỏng tải dữ liệu từng phần)
-                    Thread.sleep(500);  // Để thấy được hiệu ứng "tải" từng mục (500ms)
-
                     // Chạy trên UI thread để cập nhật TextView
                     runOnUiThread(() -> {
                         historyText.append(login).append("\n");
                         textViewLoginHistory.setText(historyText.toString());
                     });
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
         }).start();
     }

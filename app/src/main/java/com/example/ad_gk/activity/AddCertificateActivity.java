@@ -1,6 +1,7 @@
 package com.example.ad_gk.activity;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +19,9 @@ import com.example.ad_gk.model.Certificate;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AddCertificateActivity extends AppCompatActivity {
 
@@ -47,7 +50,42 @@ public class AddCertificateActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isValidDate(String date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        sdf.setLenient(false); // Không cho phép định dạng ngày tự động điều chỉnh
+        try {
+            sdf.parse(date); // Cố gắng parse ngày
+            return true; // Hợp lệ nếu không ném ra ngoại lệ
+        } catch (ParseException e) {
+            return false; // Không hợp lệ
+        }
+    }
+
     private void saveCertificateToFirestore() {
+        // Lấy dữ liệu từ các trường nhập liệu
+        String certificateName = editTextCertificateName.getText().toString().trim();
+        String issueDate = editTextIssueDate.getText().toString().trim();
+        String issuer = editTextIssuer.getText().toString().trim();
+
+        // Kiểm tra các trường không được để trống
+        if (certificateName.isEmpty()) {
+            editTextCertificateName.setError("Vui lòng nhập tên chứng chỉ");
+            editTextCertificateName.requestFocus();
+            return;
+        }
+
+        if (!isValidDate(issueDate)) {
+            editTextIssueDate.setError("Ngày cấp không đúng định dạng dd/MM/yyyy");
+            editTextIssueDate.requestFocus();
+            return;
+        }
+
+        if (issuer.isEmpty()) {
+            editTextIssuer.setError("Vui lòng nhập đơn vị cấp");
+            editTextIssuer.requestFocus();
+            return;
+        }
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Lấy toàn bộ danh sách chứng chỉ từ Firestore
@@ -72,11 +110,6 @@ public class AddCertificateActivity extends AppCompatActivity {
                 // Tạo certificateId mới bằng cách tăng maxId lên 1
                 String newCertificateId = String.format("C%05d", maxId + 1);
 
-                // Lấy dữ liệu chứng chỉ từ các trường nhập liệu
-                String certificateName = editTextCertificateName.getText().toString();
-                String issueDate = editTextIssueDate.getText().toString();
-                String issuer = editTextIssuer.getText().toString();
-
                 // Tạo danh sách studentIds trống
                 ArrayList<String> studentIds = new ArrayList<>();
 
@@ -97,4 +130,5 @@ public class AddCertificateActivity extends AppCompatActivity {
             }
         });
     }
+
 }

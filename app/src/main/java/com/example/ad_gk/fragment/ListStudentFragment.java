@@ -200,7 +200,7 @@ public class ListStudentFragment extends Fragment {
 
                                                     // Cập nhật danh sách sinh viên
                                                     studentList.add(student);
-                                                    studentAdapter.notifyDataSetChanged();
+                                                    loadStudentsFromFirestore();
                                                 })
                                                 .addOnFailureListener(e -> Toast.makeText(requireContext(), "Lỗi khi thêm sinh viên: " + e.getMessage(), Toast.LENGTH_SHORT).show());
 
@@ -305,7 +305,6 @@ public class ListStudentFragment extends Fragment {
 
     private void loadStudentsFromFirestore() {
         CollectionReference studentsRef = db.collection("students");
-
         studentsRef.addSnapshotListener((queryDocumentSnapshots, e) -> {
             if (e != null) {
                 Toast.makeText(getContext(), "Lỗi khi lấy dữ liệu từ Firestore: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -325,7 +324,6 @@ public class ListStudentFragment extends Fragment {
 
     private void filterStudents(String query) {
         CollectionReference studentsRef = db.collection("students");
-
         studentsRef.addSnapshotListener((queryDocumentSnapshots, e) -> {
             if (e != null) {
                 Toast.makeText(getContext(), "Lỗi khi lấy dữ liệu từ Firestore: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -336,7 +334,9 @@ public class ListStudentFragment extends Fragment {
                 studentList.clear();
                 for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
                     Student student = document.toObject(Student.class);
-                    if (student.getName().toLowerCase().contains(query.toLowerCase())) {
+                    // Kiểm tra cả name và userId với từ khóa tìm kiếm
+                    if (student.getName().toLowerCase().contains(query.toLowerCase()) ||
+                            student.getStudentId().toLowerCase().contains(query.toLowerCase())) {
                         studentList.add(student);
                     }
                 }
@@ -344,6 +344,7 @@ public class ListStudentFragment extends Fragment {
             }
         });
     }
+
 
     private void checkUserRole() {
         // Kiểm tra và hiển thị các nút dựa trên vai trò người dùng
